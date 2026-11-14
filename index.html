@@ -814,14 +814,13 @@ async function line(who,text,m){
 }
 
 let DEV=false,DEVRUN=null,DEVCV="rnd",DEVHINT=false,DEVFT=false,DEVAUTO=0;const VER="v86";
-const TLIM=3600000;
 const TSD=[24,45,70];const TSN=["ปกติ","ช้า","ช้ามาก"];let TS=0;try{TS=Math.min(2,Math.max(0,+localStorage.getItem("acs_ts")||0))}catch(e){}
 function tsSync(){const b=$("hts");if(b){b.textContent=["Aa","ช้า","ช้า+"][TS];b.title="ความเร็วตัวอักษร: "+TSN[TS];b.dataset.n=TSN[TS]}}
 function tsCycle(){TS=(TS+1)%3;try{localStorage.setItem("acs_ts",TS)}catch(e){}tsSync();toast("ความเร็วตัวอักษร: "+TSN[TS])}
 /* ระบบแจ้งปัญหา: เก็บ error ไว้ แล้วให้ผู้เล่นกดคัดลอกส่งต่อ */
 const ERRS=[];function errBtn(){let b=document.getElementById("erb");if(!b){b=document.createElement("button");b.id="erb";b.type="button";b.textContent="แจ้งปัญหา";
  b.style.cssText="position:fixed;right:10px;bottom:10px;z-index:200;font:600 13px Prompt,sans-serif;background:#d62828;color:#fff;border:2px solid #fff;border-radius:20px;padding:8px 14px;cursor:pointer";
- b.onclick=()=>{const t="Service Simulator v44\n"+navigator.userAgent+"\n"+innerWidth+"x"+innerHeight+"\n"+ERRS.join("\n");
+ b.onclick=()=>{const t="Service Simulator "+VER+"\n"+navigator.userAgent+"\n"+innerWidth+"x"+innerHeight+"\n"+ERRS.join("\n");
   (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{b.textContent="คัดลอกแล้ว ส่งให้ผู้พัฒนา"},()=>{prompt("คัดลอกข้อความนี้ส่งให้ผู้พัฒนา",t)})};document.body.appendChild(b)}}
 addEventListener("error",e=>{if(ERRS.length<8){ERRS.push((e.message||"error")+" @"+(e.lineno||"")+":"+(e.colno||""));errBtn()}});
 addEventListener("unhandledrejection",e=>{if(ERRS.length<8){ERRS.push("promise: "+(e.reason&&e.reason.message||e.reason));errBtn()}});
@@ -829,7 +828,7 @@ function toast(t){const e=$("tst");e.textContent=t;e.classList.remove("on");void
 let LIFE=false;
 async function choose(ch,qq,who,hint){
  const o=ch.map((c,i)=>({...c,k:i})).sort(()=>Math.random()-.5);const g=gen,cl=who=="c"?"c":"n";
- dlg.innerHTML=`<div class="nm ${cl}">${NAME[who][0]}</div><p class="tx ${cl}" id="tx"></p><div id="opts" hidden><div class="tml"><span>✍️ เลือกคำตอบของคุณ</span><span id="tmt">30</span></div><div class="tmr"><i id="tmi"></i></div>${o.map((c,i)=>`<button class="opt" data-k="${c.k}"><b>${"ABCD"[i]}</b>${c.t}</button>`).join("")}</div>`;
+ dlg.innerHTML=`<div class="nm ${cl}">${NAME[who][0]}</div><p class="tx ${cl}" id="tx"></p><div id="opts" hidden><div class="tml"><span>✍️ เลือกคำตอบของคุณ</span></div>${o.map((c,i)=>`<button class="opt" data-k="${c.k}"><b>${"ABCD"[i]}</b>${c.t}</button>`).join("")}</div>`;
  let skip=false;dlg.onclick=()=>skip=true;const tx=$("tx"),sp=who=="c"?$("cust"):null;sp&&sp.classList.add("speak");mouth(who=="c"?"c":0,who=="c");
  for(let i=1;i<=qq.length&&!skip;i++){if(g!=gen)return new Promise(()=>{});tx.textContent=qq.slice(0,i);if(i%2==0)sfx("tick");await sleep(22)}
  if(g!=gen)return new Promise(()=>{});tx.textContent=qq;dlg.onclick=null;sp&&sp.classList.remove("speak");mouth(0,false);
@@ -841,9 +840,8 @@ async function choose(ch,qq,who,hint){
   mk("💡","ใบ้",8,()=>{dlg.querySelectorAll(".opt").forEach(b=>{if(ch[+b.dataset.k].ok)b.classList.add("hint")})});
   row.appendChild(cn);$("opts").insertBefore(row,$("opts").querySelector(".opt"))}
  return new Promise(r=>{
-  const t0=Date.now();const tmi=$("tmi"),tmt=$("tmt");requestAnimationFrame(()=>{tmi.style.transition="transform "+TLIM+"ms linear";tmi.style.transform="scaleX(0)"});
-  const iv=setInterval(()=>{if(g!=gen){clearInterval(iv);return}const left=Math.max(0,Math.ceil((TLIM-(Date.now()-t0))/1000));tmt.textContent=left;if(left<=8)tmi.parentNode.classList.add("warn");if(left<=0){clearInterval(iv);r({t:"",ok:0,to:1,ms:TLIM})}},250);
-  dlg.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{clearInterval(iv);sfx("pick");const c=ch[+b.dataset.k];buzz(c.ok?14:[35,45,35]);r({...c,ms:Date.now()-t0})});
+  const t0=Date.now();
+  dlg.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{sfx("pick");const c=ch[+b.dataset.k];buzz(c.ok?14:[35,45,35]);r({...c,ms:Date.now()-t0})});
  });
 }
 function ending(title,story,res,stars,explain,label,fin){
@@ -1002,7 +1000,7 @@ document.querySelectorAll(".gb").forEach(b=>b.onclick=()=>{sfx("tap");selG(b.dat
 $("ni").addEventListener("input",preview);
 function cert(){return PN?`<div class="cert">🎓 เกียรติบัตร<br><b>${HAT?HAT+" ":""}${esc(PN)}</b><br>ผ่านการฝึกบริการ All Select · ความพอใจลูกค้า ${sat}%<br><small>${new Date().toLocaleDateString("th-TH",{day:"numeric",month:"long",year:"numeric"})}</small></div>`:""}
 
-hello();rebuildChars();applyGender();try{$("qsub").textContent=`สุ่มรอบละ 10 ข้อ จากคลัง ${SCENES.length} ข้อ ไม่ซ้ำจนครบ`;$("stfs").textContent=`ตอบให้ครบทุกหัวข้อ (${new Set(SCENES.map(x=>baseOf(x.topic))).size} ข้อ) ในรอบเดียว`}catch(e){}
+hello();rebuildChars();applyGender();try{$("qsub").textContent=`สุ่มรอบละ 10 ข้อ จากคลัง ${SCENES.length} ข้อ ไม่ซ้ำจนครบ`;$("stfs").textContent=`ตอบให้ครบทุกหัวข้อ (${SCENES.length} ข้อ) ในรอบเดียว`}catch(e){}
 let HP=0;function pushH(){try{if(!HP){history.pushState({acs:1},"");HP=1}}catch(e){}}
 window.addEventListener("popstate",()=>{HP=0;try{if(document.querySelector(".ovl"))closeOvl();else if(card.classList.contains("playing"))goHome()}catch(e){}});
 function goHome(){wl(false);gen++;closeOvl(true);stopVoice();mouth(0,false);$("cust").classList.remove("speak");$("me").classList.remove("speak");showBest();clearInterval(fxT);$("fx").innerHTML="";mood("talk");card.classList.remove("playing");sfx("tap")}
@@ -1014,10 +1012,10 @@ loadProg();
 function saveWR(){try{localStorage.setItem(PK("acs_wr"),JSON.stringify([...WR]))}catch(e){}}
 const baseOf=t=>String(t).split(" · ")[0];
 function drawDeck(n){
- const take=(pool)=>{const out=[],used=new Set();for(const sc of shuf(pool)){const b=baseOf(sc.topic);if(used.has(b))continue;used.add(b);out.push(sc);if(out.length>=n)break}return out};
+ const take=(pool)=>{const out=[],used=new Set();for(const sc of shuf(pool)){if(used.has(sc.topic))continue;used.add(sc.topic);out.push(sc);if(out.length>=n)break}return out};
  let pool=SCENES.filter(x=>!SEEN.has(x.topic));
  let pick=take(pool);
- if(pick.length<n){const have=new Set(pick.map(x=>x.topic));SEEN=new Set();const rest=SCENES.filter(x=>!have.has(x.topic)&&!pick.some(y=>baseOf(y.topic)==baseOf(x.topic)));const more=take(rest).slice(0,n-pick.length);pick=pick.concat(more)}
+ if(pick.length<n){const have=new Set(pick.map(x=>x.topic));SEEN=new Set();const rest=SCENES.filter(x=>!have.has(x.topic));const more=take(rest).slice(0,n-pick.length);pick=pick.concat(more)}
  return shuf(pick)}
 let CHAL="";
 function seedDeck(code,n){let h=2166136261;for(const ch of String(code)){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)>>>0}
@@ -1081,7 +1079,7 @@ async function play(mode,NQ){
   setPose("c","think");for(const t of s.intro)await line("n",t,"talk");
   while(true){
    const qq=first?CT(s.q):CT(s.retry);first=false;mood("talk");
-   if(qq[0]!="(")setPose("c","ask");const c=await choose(s.ch,qq,qq[0]=="("?"n":"c",tries>=2||DEVHINT);tries++;if(c.to)toast("⏱ หมดเวลา!");else{setPose("c","think");setPose("m","present");await line("m",c.t,"talk");setPose("m",null)}impact(c.ok);
+   if(qq[0]!="(")setPose("c","ask");const c=await choose(s.ch,qq,qq[0]=="("?"n":"c",tries>=2||DEVHINT);tries++;{setPose("c","think");setPose("m","present");await line("m",c.t,"talk");setPose("m",null)}impact(c.ok);
    if(c.ok){if(tries==1){setSat(Math.min(100,sat+5));streak++;if(mode!="dev"){ach("first");if(streak>=5)ach("combo5");qprog("f1",1);qprog("combo",streak,"max")}if(mode!="dev"){WR.delete(s.topic);saveWR()}const fast=false,cb=Math.min(streak-1,4)*2,b=(fast?3:0)+cb;if(b){bonus+=b;toast((fast?"⚡ ตอบไว +3 ":"")+(cb?"🔥 คอมโบ x"+streak+" +"+cb:""))}}}else{streak=0;up();setSat(Math.max(0,sat-20));if(mode!="dev"){WR.add(s.topic);saveWR()}}
    await sleep(DEVFT?200:1000);
    if(c.ok){if(mode!="dev")addCoin(tries==1?2:1);score+=tries==1?10:5;if(tries==1)f1++;up();$("pg").style.width=((si+1)/N*100)+"%";
