@@ -589,15 +589,16 @@ button,.opt,.gc,.btn,.ghost,.gb{touch-action:manipulation;-webkit-user-select:no
 /* v86 ตอนเล่าเรื่อง: จัดข้อความกลางพื้นที่ ไม่ให้โล่ง */
 #card.card.playing #dlg:not(:has(.opt)){justify-content:center!important;gap:18px!important;padding-bottom:70px!important}
 #card.card.playing #dlg:not(:has(.opt)) .tx{font-size:clamp(18px,4.8vw,22px)!important;line-height:1.55!important;padding:18px 16px!important}
+#np{width:min(100%,320px);font-family:inherit;font-weight:600;font-size:20px;text-align:center;padding:14px;border-radius:14px;border:3px solid #3b52a0;background:#fff;color:#12203f;letter-spacing:.4em}#np:focus{outline:0;border-color:#ffd166}#np::placeholder{letter-spacing:0;font-weight:400}#ndel{font-size:14px}
 </style></head><body>
 <main class="card sc-cover" id="card">
  <section class="cover"><div class="cstripe"></div>
   <div class="ctitle"><small>ALL SELECT · SPECIALTY MOMENT</small><h1>Service<br>Simulator</h1><p>เกมฝึกบริการสไตล์เรื่องเล่า</p></div>
   <div class="cstage"><img id="c1" alt=""><img id="c2" alt=""></div><i class="pt" style="left:8%;animation-duration:9s;animation-delay:-1s"></i><i class="pt" style="left:20%;animation-duration:12s;animation-delay:-5s"></i><i class="pt" style="left:33%;animation-duration:10s;animation-delay:-8s"></i><i class="pt" style="left:46%;animation-duration:13s;animation-delay:-2s"></i><i class="pt" style="left:58%;animation-duration:9s;animation-delay:-6s"></i><i class="pt" style="left:70%;animation-duration:11s;animation-delay:-3s"></i><i class="pt" style="left:82%;animation-duration:12s;animation-delay:-9s"></i><i class="pt" style="left:92%;animation-duration:10s;animation-delay:-4s"></i><i class="pt" style="left:14%;animation-duration:14s;animation-delay:-11s"></i><i class="pt" style="left:64%;animation-duration:15s;animation-delay:-7s"></i><div class="cchips"><span>❓ 36 คำถามจริง</span><span>⚡ เล่นสั้น 5 ข้อ</span><span>🏅 ใบประกาศนียบัตร</span></div>
   <button class="btn big pulse" id="cs">▶ แตะเพื่อเริ่ม</button><small class="cf">ฝึกบริการ All Select ที่ร้านสะดวกซื้อ</small></section>
- <section class="namep"><div class="av"><img id="nav" alt=""></div><h2 id="nh">ตั้งชื่อของคุณ</h2><p>เลือกเพศและตั้งชื่อ ชื่อนี้จะขึ้นในป้ายชื่อ บทสนทนา และเกียรติบัตร</p><div class="gsel"><button class="gb on" data-g="f" type="button">👩 ผู้หญิง</button><button class="gb" data-g="m" type="button">👨 ผู้ชาย</button></div>
-  <input id="ni" maxlength="12" placeholder="เช่น มิ้นท์" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done"><div class="nerr" id="ne"></div>
-  <button class="btn big" id="nok">ยืนยัน ▶</button><button class="ghost" id="nback">← กลับหน้าปก</button></section>
+ <section class="namep"><div class="av"><img id="nav" alt=""></div><h2 id="nh">ตั้งชื่อของคุณ</h2><p>เลือกเพศ ตั้งชื่อ และ PIN 4 หลัก ชื่อนี้จะขึ้นในป้ายชื่อ บทสนทนา และเกียรติบัตร</p><div class="gsel"><button class="gb on" data-g="f" type="button">👩 ผู้หญิง</button><button class="gb" data-g="m" type="button">👨 ผู้ชาย</button></div>
+  <input id="ni" maxlength="12" placeholder="เช่น มิ้นท์" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done"><input id="np" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="PIN 4 หลัก" autocomplete="off" aria-label="PIN 4 หลัก"><div class="nerr" id="ne"></div>
+  <button class="btn big" id="nok">ยืนยัน ▶</button><button class="ghost" id="ndel" type="button" hidden>🗑 ลบข้อมูลผู้เล่นนี้</button><button class="ghost" id="nback">← กลับหน้าปก</button></section>
  <section class="home"><div class="hero"><span class="fl" style="left:8%">☕</span><span class="fl" style="left:32%;animation-delay:2s">✨</span><span class="fl" style="left:58%;animation-delay:1s">🫘</span><span class="fl" style="left:84%;animation-delay:3s">💖</span><img id="h1" alt=""><img id="h2" alt=""><div class="hsw"><button type="button" id="hm" title="เสียงเพลง">🎵</button><button type="button" id="hs" title="เอฟเฟกต์เสียง">🔊</button><button type="button" id="hts" style="font:700 15px Prompt,sans-serif">Aa</button></div></div>
  <div class="hb"><h1>Service Simulator</h1><div id="ver" aria-hidden="true"></div>
  <button class="hello" id="hello" type="button"></button>
@@ -605,7 +606,7 @@ button,.opt,.gc,.btn,.ghost,.gb{touch-action:manipulation;-webkit-user-select:no
  <div id="trophy"></div>
  <div class="gcards">
   <button class="gc main" id="st" type="button"><i>💬</i><span><b>ถามตอบกับลูกค้า</b><small id="qsub">สุ่มรอบละ 10 ข้อ ไม่ซ้ำจนครบคลัง</small></span><em id="bq"></em></button>
-  <button class="gc" id="stq" type="button"><i>⚡</i><span><b>เล่นสั้น 5 ข้อ</b><small>จบเร็ว เหมาะฝึกระหว่างพัก</small></span></button>
+  <button class="gc" id="stq" type="button"><i>⚡</i><span><b>เล่นสั้น 5 ข้อ</b><small id="stqs">จบเร็ว เหมาะฝึกระหว่างพัก</small></span></button>
   
   
   <button class="gc" id="sta" type="button"><i>🏅</i><span><b>ความสำเร็จ</b><small id="achs">สะสมเหรียญรางวัลจากการฝึก</small></span></button>
@@ -813,7 +814,7 @@ async function line(who,text,m){
  if(g!=gen)return new Promise(()=>{});sp&&sp.classList.remove("speak");mouth(0,false);tx.textContent=text;dlg.onclick=null;$("nx").hidden=false;await click($("nx"));stopVoice();
 }
 
-let DEV=false,DEVRUN=null,DEVCV="rnd",DEVHINT=false,DEVFT=false,DEVAUTO=0;const VER="v86";
+let DEV=false,DEVRUN=null,DEVCV="rnd",DEVHINT=false,DEVFT=false,DEVAUTO=0;const VER="v87";
 const TSD=[24,45,70];const TSN=["ปกติ","ช้า","ช้ามาก"];let TS=0;try{TS=Math.min(2,Math.max(0,+localStorage.getItem("acs_ts")||0))}catch(e){}
 function tsSync(){const b=$("hts");if(b){b.textContent=["Aa","ช้า","ช้า+"][TS];b.title="ความเร็วตัวอักษร: "+TSN[TS];b.dataset.n=TSN[TS]}}
 function tsCycle(){TS=(TS+1)%3;try{localStorage.setItem("acs_ts",TS)}catch(e){}tsSync();toast("ความเร็วตัวอักษร: "+TSN[TS])}
@@ -857,18 +858,18 @@ function openOvl(html,cls){pushH();const d=document.createElement("div");d.class
 function rankScreen(f,explain,label){wl(false);
  const pct=Math.round(f.p*100),st=f.p>=.9?3:f.p>=.6?2:1,pass=pct>=50;
  const o=openOvl(`<div class="rays" style="--g:#ffc531"></div>
- <div class="rkh" style="--g:#ffc531">${pass?"ผ่านการฝึก!":"ลองอีกครั้งนะ"}</div>
+ <div class="rkh" style="--g:#ffc531">${f.title||(pass?"ผ่านการฝึก!":"ลองอีกครั้งนะ")}</div>
  <div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="rg0"/><circle id="rgc" cx="60" cy="60" r="52" class="rg1" stroke-dasharray="327" stroke-dashoffset="327"/></svg><div class="rgn"><b id="rsn">0</b><small>/ ${f.max} คะแนน</small></div></div>
  <div class="gt2">${grade(f.p)}</div>
  <div class="rst">${[0,1,2].map(i=>`<span class="${i<st?"on":""}" style="animation-delay:${.5+i*.3}s">★</span>`).join("")}</div>
  <div class="tiles"><div><b>💖 ${sat}%</b><small>ความพอใจ</small></div><div><b>🎯</b><small>${esc(f.extra||"")}</small></div>${f.bonus!=null?`<div><b>⚡ +${f.bonus}</b><small>โบนัสคอมโบ</small></div>`:""}</div>
- ${pass?`<button class="btn big cbtn" id="rcert" type="button">🎓 รับเกียรติบัตร</button>`:`<div class="chn">ได้ตั้งแต่ 50% ขึ้นไปจึงจะรับเกียรติบัตรได้</div>`}
+ ${f.cert?`<button class="btn big cbtn" id="rcert" type="button">🎓 รับเกียรติบัตร</button>`:`<div class="chn">${f.certNote||""}</div>`}
  <div class="row2"><button class="ghost" id="rgo" type="button">${label}</button><button class="ghost" id="rhm" type="button">🏠 หน้าหลัก</button></div>
  <details class="ex2"><summary>📖 ดูเฉลย</summary><div class="ex">${explain}</div></details>`,"rank");
  const gg=gen,sn=$("rsn"),rg=$("rgc");let k=0;
  const iv=setInterval(()=>{k++;sn.textContent=Math.round(f.score*k/30);rg.style.strokeDashoffset=327*(1-Math.min(1,f.p*k/30));if(k>=30||gg!=gen)clearInterval(iv)},40);
  $("rhm").onclick=()=>goHome();
- if(pass)$("rcert").onclick=()=>{sfx("tap");showCert({pct,game:f.game})};
+ if(f.cert)$("rcert").onclick=()=>{sfx("tap");showCert({pct,game:f.game})};
  return new Promise(r=>{$("rgo").onclick=()=>{sfx("tap");closeOvl(true);r()}});
 }
 async function drawCert(d){
@@ -964,11 +965,11 @@ window.__ach=ach;
 let BEST=0,DONE={};const PK=k=>k+(PN?"_"+PN:"");
 function markDone(k,p){const v=Math.round(p*100);if(!(DONE[k]>=v))DONE[k]=v;try{localStorage.setItem(PK("acs_done"),JSON.stringify(DONE))}catch(e){}showBest()}
 function showBest(){updateRV();try{loadAch();touchDay();achSub();loadApp();hello()}catch(e){}
- const q=DONE.q;$("bq").textContent=q!=null?"✓ "+q+"%":"";
- $("ptx").textContent=q!=null?"ฝึกแล้ว · ผ่านการฝึก":"ยังไม่เคยฝึก";$("pbi").style.width=(q!=null?Math.min(100,q):0)+"%";
+ const q=DONE.q,fq=DONE.f;$("bq").textContent=q!=null?"✓ "+q+"%":"";try{$("stqs").textContent=SH&&SH.plays?`สถิติ 5 ข้อ: ดีที่สุด ${SH.best}% · เล่นแล้ว ${SH.plays} ครั้ง`:"จบเร็ว เหมาะฝึกระหว่างพัก"}catch(e){}
+ $("ptx").textContent=fq>=50?"ผ่านการฝึกครบ 36 ข้อแล้ว":q!=null||fq!=null?"ฝึกแล้ว · ยังไม่ผ่านครบ 36 ข้อ":"ยังไม่เคยฝึก";$("pbi").style.width=(fq!=null?Math.min(100,fq):0)+"%";
  $("best").textContent=BEST?"🏅 สถิติถามตอบ "+BEST+"%":"";
- $("trophy").innerHTML=q>=50&&PN?`<button class="gc gold" id="tcert" type="button"><i>🎓</i><span><b>รับเกียรติบัตร</b><small>ผ่านการฝึกแล้ว คะแนน ${q}%</small></span></button>`:"";
- if($("tcert"))$("tcert").onclick=()=>{sfx("tap");showCert({pct:DONE.q,game:"ถามตอบกับลูกค้า"})}}
+ $("trophy").innerHTML=fq>=50&&PN?`<button class="gc gold" id="tcert" type="button"><i>🎓</i><span><b>รับเกียรติบัตร</b><small>ผ่านครบ 36 ข้อ คะแนน ${fq}%</small></span></button>`:"";
+ if($("tcert"))$("tcert").onclick=()=>{sfx("tap");showCert({pct:DONE.f,game:"ท้าทายครบคลัง 36 ข้อ"})}}
 function fin(p,st){if(st==0&&p*100>BEST){BEST=Math.round(p*100);try{localStorage.setItem(PK("acs_best"),BEST)}catch(e){}}showBest()}
 function enter(){const c=$("cust");c.classList.remove("enter");void c.offsetWidth;c.classList.add("enter");c.onanimationend=()=>c.classList.remove("enter")}
 function burst(n){const e=["🎉","⭐","✨","💖","🎊","☕"];for(let i=0;i<n;i++)setTimeout(()=>{const x=document.createElement("span");x.textContent=e[Math.random()*e.length|0];x.style.left=Math.random()*92+"%";x.style.bottom=(10+Math.random()*30)+"%";x.style.fontSize=(20+Math.random()*20)+"px";$("fx").appendChild(x);setTimeout(()=>x.remove(),2400)},i*60)}
@@ -977,16 +978,47 @@ function setSat(v){sat=v;const f=$("mf");f.style.width=v+"%";f.style.background=
 function impact(ok){try{react(ok)}catch(e){}const i=$("imp");i.textContent=ok?"ถูกต้อง!":"ไม่ใช่นะ!";i.className="imp "+(ok?"ok":"bad");void i.offsetWidth;i.classList.add("show");if(!ok){const c=$("card");c.classList.remove("shake");void c.offsetWidth;c.classList.add("shake");$("meter").classList.add("hit")}}
 const card=$("card");
 const esc=t=>t.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-let PN="";try{PN=(localStorage.getItem("acs_name")||"").slice(0,12)}catch(e){}
+let PN="",LASTN="";try{LASTN=(localStorage.getItem("acs_name")||"").slice(0,12)}catch(e){}
 function screen(n){card.classList.remove("sc-cover","sc-name","playing");if(n!="menu")card.classList.add("sc-"+n);window.scrollTo(0,0)}
 function hello(){$("hello").textContent=PN?"สวัสดี "+(HAT?HAT+" ":"")+"คุณ"+PN+" ✏️":"ตั้งชื่อของคุณ ✏️"}
-function toName(){$("ni").value=PN;selG(PG);$("ne").textContent="";$("nh").textContent=PN?"ยินดีต้อนรับกลับ!":"ตั้งชื่อของคุณ";screen("name");setTimeout(()=>{try{$("ni").focus()}catch(e){}},50)}
+function toName(){$("ni").value=PN||LASTN;$("np").value="";$("ne").textContent="";nameSync();screen("name");setTimeout(()=>{try{$("ni").focus()}catch(e){}},50)}
 $("c1").src=$("nav").src=IMG.ME_H;$("c2").src=IMG.HAPPY;
 $("cs").onclick=()=>{ac();if(S.music)startMusic();sfx("tap");toName()};
 $("nback").onclick=()=>{sfx("tap");screen("cover")};
-$("nok").onclick=()=>{const v=$("ni").value.trim();if(!v){$("ne").textContent="กรุณาใส่ชื่อก่อนนะ";sfx("bad");return}PN=v.slice(0,12);try{localStorage.setItem("acs_name",PN)}catch(e){}loadProg();showBest();PG=selg;try{localStorage.setItem("acs_g",PG)}catch(e){}rebuildChars();applyGender();sfx("pick");hello();screen("menu")};
+/* ===== v87 ผู้เล่นหลายคน + PIN 4 หลัก (PIN เป็นตัวล็อกสะดวกใช้ ไม่ใช่ความปลอดภัยระดับสูง; ข้อมูลอยู่ในเครื่อง) ===== */
+const PLK="acs_players",BASEK=["acs_wr","acs_seen","acs_done","acs_best","acs_chal","acs_ach","acs_day","acs_q","acs_hats","acs_hat","acs_coin","acs_rounds","acs_short"];
+let PLY={};try{PLY=JSON.parse(localStorage.getItem(PLK)||"{}")||{}}catch(e){PLY={}}
+const plSave=()=>{try{localStorage.setItem(PLK,JSON.stringify(PLY))}catch(e){}};
+const cyrb=t=>{let a=0xdeadbeef,b=0x41c6ce57;for(let i=0;i<t.length;i++){const c=t.charCodeAt(i);a=Math.imul(a^c,2654435761);b=Math.imul(b^c,1597334677)}a=Math.imul(a^(a>>>16),2246822507)^Math.imul(b^(b>>>13),3266489909);b=Math.imul(b^(b>>>16),2246822507)^Math.imul(a^(a>>>13),3266489909);return(4294967296*(2097151&b)+(a>>>0)).toString(36)};
+const pinH=(n,pin)=>cyrb("allselect|"+n.toLowerCase()+"|"+pin);
+const plFind=n=>Object.keys(PLY).find(k=>k.toLowerCase()==String(n).toLowerCase());
+const hasLegacy=n=>{try{return BASEK.some(k=>localStorage.getItem(k+"_"+n)!=null)}catch(e){return false}};
+let LOCKT=0,PINFAIL=0;
+function nameSync(){const v=$("ni").value.trim(),k=plFind(v),leg=!k&&v&&hasLegacy(v);
+ if(k&&PLY[k].g)selG(PLY[k].g);else selG(PG);
+ $("nh").textContent=k||leg?"ยินดีต้อนรับกลับ!":"ตั้งชื่อของคุณ";$("ndel").hidden=!(k||leg);
+ $("np").placeholder=leg?"ตั้ง PIN 4 หลักใหม่":k?"PIN ของคุณ":"ตั้ง PIN 4 หลัก"}
+$("nok").onclick=()=>{const v=$("ni").value.trim(),pin=$("np").value.trim(),er=m=>{$("ne").textContent=m;sfx("bad")};
+ if(!v){er("กรุณาใส่ชื่อก่อนนะ");return}
+ if(!/^\d{4}$/.test(pin)){er("PIN ต้องเป็นตัวเลข 4 หลัก");return}
+ if(Date.now()<LOCKT){er("ใส่ PIN ผิดหลายครั้ง รอสักครู่แล้วลองใหม่");return}
+ let key=plFind(v);
+ if(key){if(PLY[key].h!==pinH(key,pin)){PINFAIL++;if(PINFAIL>=5){LOCKT=Date.now()+60000;PINFAIL=0}er("PIN ไม่ถูกต้อง");return}PINFAIL=0}
+ else{key=v.slice(0,12);PLY[key]={h:pinH(key,pin)}}
+ PLY[key].g=selg;plSave();
+ PN=key;try{localStorage.setItem("acs_name",PN)}catch(e){}loadProg();showBest();PG=selg;try{localStorage.setItem("acs_g",PG)}catch(e){}rebuildChars();applyGender();sfx("pick");hello();screen("menu")};
+$("ndel").onclick=()=>{const v=$("ni").value.trim(),k=plFind(v),pin=$("np").value.trim();
+ if(k){if(!/^\d{4}$/.test(pin)||PLY[k].h!==pinH(k,pin)){$("ne").textContent="ใส่ PIN ที่ถูกต้องเพื่อลบข้อมูล";sfx("bad");return}}
+ const nm=k||v;if(!nm||!(k||hasLegacy(nm)))return;
+ if(!confirm("ลบข้อมูลของ “"+nm+"” ทั้งหมด (คะแนน เหรียญ ความสำเร็จ เกียรติบัตร) ลบแล้วกู้คืนไม่ได้ ยืนยันหรือไม่?"))return;
+ try{BASEK.forEach(b=>localStorage.removeItem(b+"_"+nm));if(localStorage.getItem("acs_name")==nm)localStorage.removeItem("acs_name")}catch(e){}
+ if(k){delete PLY[k];plSave()}
+ if(PN==nm){PN="";loadProg();showBest();hello()}if(LASTN==nm)LASTN="";
+ $("ni").value="";$("np").value="";$("ne").textContent="ลบข้อมูลแล้ว";nameSync();sfx("tap")};
+$("np").addEventListener("input",()=>{$("np").value=$("np").value.replace(/\D/g,"").slice(0,4);$("ne").textContent=""});
+$("np").addEventListener("keydown",e=>{if(e.key=="Enter")$("nok").click()});
 $("ni").addEventListener("input",()=>$("ne").textContent="");
-$("ni").addEventListener("keydown",e=>{if(e.key=="Enter")$("nok").click()});
+$("ni").addEventListener("keydown",e=>{if(e.key=="Enter"){if($("np").value.length<4)$("np").focus();else $("nok").click()}});$("ni").addEventListener("input",nameSync);
 $("hello").onclick=()=>{sfx("tap");toName()};
 let PG="f";try{PG=localStorage.getItem("acs_g")=="m"?"m":"f"}catch(e){}
 const conv=t=>t.replace(/ค่ะ/g,"ครับ").replace(/คะ(?!แนน)/g,"ครับ");
@@ -1004,10 +1036,10 @@ hello();rebuildChars();applyGender();try{$("qsub").textContent=`สุ่มร�
 let HP=0;function pushH(){try{if(!HP){history.pushState({acs:1},"");HP=1}}catch(e){}}
 window.addEventListener("popstate",()=>{HP=0;try{if(document.querySelector(".ovl"))closeOvl();else if(card.classList.contains("playing"))goHome()}catch(e){}});
 function goHome(){wl(false);gen++;closeOvl(true);stopVoice();mouth(0,false);$("cust").classList.remove("speak");$("me").classList.remove("speak");showBest();clearInterval(fxT);$("fx").innerHTML="";mood("talk");card.classList.remove("playing");sfx("tap")}
-$("st").onclick=()=>{sfx("tap");ROUND=0;play("all",10)};$("stq").onclick=()=>{sfx("tap");ROUND=0;play("all",5)};$("stf").onclick=()=>{sfx("tap");ROUND=0;play("all",99)};$("rv").onclick=()=>{sfx("tap");play("review")};
-let WR=new Set();
+$("st").onclick=()=>{sfx("tap");ROUND=0;play("all",10)};$("stq").onclick=()=>{sfx("tap");ROUND=0;play("short",5)};$("stf").onclick=()=>{sfx("tap");ROUND=0;play("all",99)};$("rv").onclick=()=>{sfx("tap");play("review")};
+let WR=new Set(),SH={best:0,plays:0,last:null};
 let SEEN=new Set(),ROUND=0;
-function loadProg(){try{SEEN=new Set(JSON.parse(localStorage.getItem(PK("acs_seen"))||"[]"))}catch(e){SEEN=new Set()}try{BEST=+localStorage.getItem(PK("acs_best"))||0}catch(e){BEST=0}try{DONE=JSON.parse(localStorage.getItem(PK("acs_done"))||"{}")||{}}catch(e){DONE={}}try{WR=new Set(JSON.parse(localStorage.getItem(PK("acs_wr"))||"[]"))}catch(e){WR=new Set()}}
+function loadProg(){try{SEEN=new Set(JSON.parse(localStorage.getItem(PK("acs_seen"))||"[]"))}catch(e){SEEN=new Set()}try{BEST=+localStorage.getItem(PK("acs_best"))||0}catch(e){BEST=0}try{DONE=JSON.parse(localStorage.getItem(PK("acs_done"))||"{}")||{}}catch(e){DONE={}}try{WR=new Set(JSON.parse(localStorage.getItem(PK("acs_wr"))||"[]"))}catch(e){WR=new Set()}try{SH=JSON.parse(localStorage.getItem(PK("acs_short"))||"null")||{best:0,plays:0,last:null}}catch(e){SH={best:0,plays:0,last:null}}}
 loadProg();
 function saveWR(){try{localStorage.setItem(PK("acs_wr"),JSON.stringify([...WR]))}catch(e){}}
 const baseOf=t=>String(t).split(" · ")[0];
@@ -1068,7 +1100,7 @@ async function play(mode,NQ){
  let RUN=mode=="review"?shuf(SCENES.filter(s=>WR.has(s.topic))):[];
  if(mode=="dev"&&DEVRUN&&DEVRUN.length){RUN=DEVRUN.slice();DEVRUN=null}
  if(mode=="chal")RUN=seedDeck(CHAL,10);
- if(!RUN.length){mode="all";RUN=drawDeck(NQ)}
+ if(!RUN.length){if(mode=="review"){toast("ไม่มีข้อที่ต้องทบทวนแล้ว 🎉");goHome();return}if(mode!="short")mode="all";RUN=drawDeck(NQ)}
  if(mode=="all")ROUND++;gen++;const G=gen;card.classList.add("playing");pushH();wl(true);mood("talk");$("fx").innerHTML="";setSat(100);let score=0,f1=0,streak=0,bonus=0;const N=RUN.length;LIFE=mode!="chal"&&mode!="dev";
  for(let si=0;si<N;si++){
   const s=RUN[si],last=si==N-1;let first=true,tries=0;
@@ -1084,9 +1116,11 @@ async function play(mode,NQ){
    await sleep(DEVFT?200:1000);
    if(c.ok){if(mode!="dev")addCoin(tries==1?2:1);score+=tries==1?10:5;if(tries==1)f1++;up();$("pg").style.width=((si+1)/N*100)+"%";
     for(const [w,t] of s.good)await line(w,w=="c"?CT(t):t,"happy");await line("n",s.goodEnd[0],"happy");
-    const full=last&&mode=="all"&&N>=10;if(last){sfx("win");burst(40);if(full){fin(score/(N*10),0);markDone("q",score/(N*10));ach("round1");addCoin(10);qprog("round",1);if(score>=N*10)ach("perfect");try{const k=PK("acs_rounds"),n=(+localStorage.getItem(k)||0)+1;localStorage.setItem(k,n);if(n>=3)ach("round3")}catch(e){}}if(last&&mode=="review")ach("review")}
+    const full=last&&mode=="all"&&N>=10,full36=full&&N>=SCENES.length,rvw=last&&mode=="review",sht=last&&mode=="short";if(last){sfx("win");burst(40);if(full){fin(score/(N*10),0);markDone("q",score/(N*10));if(full36)markDone("f",score/(N*10));ach("round1");addCoin(10);qprog("round",1);if(score>=N*10)ach("perfect");try{const k=PK("acs_rounds"),n=(+localStorage.getItem(k)||0)+1;localStorage.setItem(k,n);if(n>=3)ach("round3")}catch(e){}}
+     if(sht){const pc=Math.round(score/(N*10)*100);SH={best:Math.max(SH.best||0,pc),plays:(SH.plays||0)+1,last:pc};sv("acs_short",SH);showBest()}
+     if(rvw&&f1>=Math.ceil(N/2))ach("review")}
     const gr=last?grade(score/(N*10))+(PN?" · "+esc(PN):""):"",extra=last?`<br><b>คะแนนรวม ${score}/${N*10}</b> · ถูกตั้งแต่ครั้งแรก ${f1}/${N} ข้อ · ความพอใจลูกค้า ${sat}%`:"";
-    await ending(s.title,s.goodEnd[0]+extra,last?gr:s.goodEnd[1],tries==1?s.goodEnd[2]:3,s.explain,last?(mode=="review"?"🔁 ทบทวนอีกครั้ง":"🔁 เล่นอีกครั้ง"):"ไปฉากต่อไป ▶",full?{p:score/(N*10),score,max:N*10,extra:`ถูกครั้งแรก ${f1}/${N} ข้อ`,bonus,game:"ถามตอบกับลูกค้า"}:null);break}
+    await ending(s.title,s.goodEnd[0]+extra,last?gr:s.goodEnd[1],tries==1?s.goodEnd[2]:3,s.explain,last?(mode=="review"?"🔁 ทบทวนอีกครั้ง":"🔁 เล่นอีกครั้ง"):"ไปฉากต่อไป ▶",full?{p:score/(N*10),score,max:N*10,extra:`ถูกครั้งแรก ${f1}/${N} ข้อ`,bonus,game:full36?"ท้าทายครบคลัง 36 ข้อ":"ถามตอบกับลูกค้า",cert:full36&&score/(N*10)>=.5,certNote:full36?"ต้องได้ตั้งแต่ 50% ขึ้นไปจึงจะรับเกียรติบัตรได้":"เกียรติบัตรออกเมื่อเล่น “ท้าทายครบคลัง” ครบ 36 ข้อ และได้ตั้งแต่ 50%"}:sht?{p:score/(N*10),score,max:N*10,extra:`ถูกครั้งแรก ${f1}/${N} ข้อ`,game:"เล่นสั้น 5 ข้อ",title:"จบรอบเล่นสั้น",cert:false,certNote:`โหมดนี้เก็บสถิติแยก (ดีที่สุด ${SH.best}%) ไม่ออกเกียรติบัตร`}:rvw?{p:score/(N*10),score,max:N*10,extra:`ถูกครั้งแรก ${f1}/${N} ข้อ`,game:"ทบทวนข้อที่ผิด",title:"ทบทวนเสร็จแล้ว",cert:false,certNote:"ถูกครั้งแรกอย่างน้อยครึ่งหนึ่งจึงได้ความสำเร็จ “แก้ตัวสำเร็จ”"}:null);break}
    for(const [w,t] of (c.r?[["c",c.r],s.bad[1]]:s.bad))await line(w,w=="c"?CT(t):t,"angry");
    if(sat<=0){await ending(s.title,"ลูกค้าหมดความอดทน เดินออกจากร้านไปแล้ว...","💔 ลูกค้าเดินออกจากร้าน",0,s.explain,"↩ ลองใหม่ (ความพอใจ 50%)");setSat(50)}else await ending(s.title,s.badEnd[0],s.badEnd[1],s.badEnd[2],s.explain,"↩ ลองตอบใหม่");
   }
