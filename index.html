@@ -654,13 +654,110 @@ button,.opt,.gc,.btn,.ghost,.gb{touch-action:manipulation;-webkit-user-select:no
 }
 @media (max-width:600px) and (orientation:portrait) and (max-height:700px){
 #card.card.playing #dlg .opt{min-height:44px!important}}
+/* ===== Task 006: Visual & UI/UX overhaul (design tokens + skin) ===== */
+:root{--as-navy-950:#071a3b;--as-navy-900:#0b2450;--as-navy-800:#12366e;--as-blue-700:#1458a6;--as-blue-500:#2385df;--as-blue-100:#e8f3ff;--as-orange-600:#e96a08;--as-orange-500:#ff8618;--as-gold-500:#ffc533;--as-green-600:#16834a;--as-red-600:#c63a36;--as-ink:#12233f;--as-muted:#60728d;--as-surface:#f7faff;--as-border:#c9d9ee;--as-radius-lg:24px;--as-shadow-card:0 8px 22px rgba(7,26,59,.28);--as-focus:0 0 0 3px rgba(35,133,223,.45)}
+/* ปุ่มหลัก = ส้ม 3D / ปุ่มรอง = ฟ้าอ่อน */
+#card .btn.big,.ovl .btn.big,.namep .btn.big{background:linear-gradient(180deg,#ffa23a,var(--as-orange-600))!important;color:#fff!important;border:0!important;border-radius:999px!important;box-shadow:0 5px 0 #a64310,0 10px 22px rgba(233,106,8,.35)!important;font-weight:700;letter-spacing:.2px;min-height:48px;text-shadow:0 1px 0 #a6431088}
+#card .btn.big:active,.ovl .btn.big:active{transform:translateY(3px);box-shadow:0 2px 0 #a64310!important}
+.ovl .btn.big.cbtn{background:linear-gradient(180deg,#ffe08a,var(--as-gold-500))!important;color:#4a3000!important;box-shadow:0 5px 0 #a87400,0 10px 22px rgba(255,197,51,.35)!important;text-shadow:none}
+#card .ghost,.ovl .ghost,.row2 .ghost{background:linear-gradient(180deg,#fff,var(--as-blue-100))!important;color:var(--as-navy-900)!important;border:1px solid #8db9e8!important;border-radius:999px!important;min-height:44px;padding:10px 20px;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 3px 0 #5d8fc4}
+#card .ghost:active,.ovl .ghost:active{transform:translateY(2px);box-shadow:0 1px 0 #5d8fc4}
+#card button:focus-visible,.ovl button:focus-visible,.ovl input:focus-visible{outline:0;box-shadow:var(--as-focus)}
+/* ป้ายชื่อผู้เล่น */
+#card .hello{background:linear-gradient(180deg,#1a4a8f,var(--as-navy-800))!important;border:2px solid #5a9bea!important;color:#fff!important;font-weight:700;box-shadow:0 3px 0 #071a3b}
+/* หน้าซ้อน (ความสำเร็จ ร้านค้า ภารกิจ ผลลัพธ์ ท้าทาย) */
+.ovl:not(.cert){background:linear-gradient(180deg,rgba(7,26,59,.88),rgba(11,36,80,.95)),#071a3b}
+.ovl:not(.cert)::before{content:"";position:fixed;inset:-24px;z-index:-1;background:var(--hero) 50% 30%/cover no-repeat;filter:blur(10px) saturate(1.15);opacity:.55}
+.ovl{isolation:isolate}
+.chd{font-size:22px!important;color:#fff!important;text-shadow:0 2px 0 #0b245099;background:linear-gradient(180deg,#2a6fc4,var(--as-blue-700));border:1px solid #6aa8ee;border-radius:999px;padding:8px 22px;box-shadow:0 4px 0 #0b2450,0 8px 18px #071a3b66}
+.achp{margin:0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.cpill{display:inline-flex;gap:6px;align-items:center;background:#ffffff1f;border:1px solid #ffffff44;border-radius:999px;padding:6px 14px;font-size:14px}
+.cpill b{color:var(--as-gold-500)}
+.achs2{align-self:stretch;display:flex;align-items:baseline;gap:8px;font-weight:700;font-size:17px;color:var(--as-gold-500);border-bottom:2px solid #ffc53355;padding-bottom:4px;margin-top:6px}
+.achs2 small{font-weight:400;font-size:13px;color:#c8d9f5}
+.achq{align-self:stretch;display:flex;flex-direction:column;gap:8px}
+.aq{display:flex;align-items:center;gap:10px;background:linear-gradient(180deg,#fff,var(--as-blue-100));color:var(--as-ink);border:2px solid var(--as-border);border-radius:var(--as-radius-md,18px);padding:10px 12px;box-shadow:var(--as-shadow-card)}
+.aq.on{border-color:#ffc533;background:linear-gradient(180deg,#fff8dc,#ffeaa6)}
+.aqi{font-style:normal;font-size:26px;flex:none;width:40px;text-align:center}
+.aqt{flex:1;min-width:0;font-size:14px;font-weight:600;line-height:1.3}
+.aqb{height:8px;background:#c9d9ee;border-radius:99px;margin-top:6px;overflow:hidden}
+.aqb u{display:block;height:100%;background:linear-gradient(90deg,#ff9b2f,#ffc533);border-radius:99px;transition:width .4s}
+.aq em{font-style:normal;flex:none;font-size:13px;font-weight:700;background:var(--as-navy-800);color:#fff;border-radius:99px;padding:4px 12px;min-width:48px;text-align:center}
+.aq.on em{background:var(--as-green-600)}
+.achh{align-self:stretch;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ah{font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;min-height:104px;background:linear-gradient(180deg,#fff,var(--as-blue-100));color:var(--as-ink);border:2px solid var(--as-border);border-radius:var(--as-radius-md,18px);cursor:pointer;box-shadow:var(--as-shadow-card);transition:transform .12s}
+.ah:active{transform:scale(.96)}
+.ah i{font-style:normal;font-size:34px;line-height:1.1}
+.ah small{font-size:13px;font-weight:600;color:var(--as-ink)}
+.ah b{font-size:13px;background:linear-gradient(180deg,#ffa23a,var(--as-orange-600));color:#fff;border-radius:99px;padding:3px 12px;margin-top:auto}
+.ah.own b{background:var(--as-navy-800)}
+.ah.eq{border-color:#ffc533;background:linear-gradient(180deg,#fff8dc,#ffeaa6)}
+.ah.eq b{background:var(--as-green-600)}
+.achg{align-self:stretch;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.ac{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;padding:12px 8px;background:#ffffff14;border:2px dashed #ffffff33;border-radius:var(--as-radius-md,18px);color:#c8d9f5}
+.ac i{font-style:normal;font-size:32px;width:62px;height:62px;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle at 35% 30%,#7d8aa6,#46526e);border:3px solid #98a4bd;box-shadow:inset 0 -4px 0 #0003}
+.ac b{font-size:14px;color:#fff}
+.ac small{font-size:12.5px;line-height:1.3;opacity:.9}
+.ac.on{background:linear-gradient(180deg,#fff,var(--as-blue-100));border:2px solid #ffc533;color:var(--as-ink);box-shadow:var(--as-shadow-card)}
+.ac.on i{background:radial-gradient(circle at 35% 30%,#ffe9a0,#f0a800);border-color:#fff3c4;box-shadow:inset 0 -4px 0 #a8740055,0 4px 10px #ffc53366}
+.ac.on b{color:var(--as-navy-900)}
+.ac.on small{color:var(--as-muted)}
+/* หน้าเลือกตัวละคร/ตั้งชื่อ */
+.gsel{gap:12px!important}
+#card .gb{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:112px;min-height:44px;padding:8px 12px 10px;border-radius:20px;border:3px solid #5a9bea;background:linear-gradient(180deg,#1a4a8f,var(--as-navy-800));font-weight:700;box-shadow:0 4px 0 #071a3b}
+#card .gb.on{border-color:var(--as-gold-500);background:linear-gradient(180deg,#ff9b2f,var(--as-orange-600));box-shadow:0 4px 0 #a64310,0 0 0 3px #ffc53366}
+#card .gb img{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:50% 20%;background:#fff;border:3px solid #fff}
+#card #ni{border-radius:999px;border:3px solid #5a9bea;box-shadow:0 4px 0 #071a3b}
+#card #ni:focus{outline:0;border-color:var(--as-gold-500)}
+.namep .av{border-color:var(--as-gold-500)!important}
+/* --- หน้าฝึก: ตัวเลือกเป็นการ์ดสว่าง อ่านง่าย --- */
+#card.card.playing #dlg .opt{background:linear-gradient(180deg,#fff,var(--as-blue-100))!important;border:2px solid var(--as-border)!important;color:var(--as-ink)!important;border-radius:16px!important;box-shadow:0 3px 0 #5d8fc4,0 6px 14px #071a3b44!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;font-weight:500}
+#card.card.playing #dlg .opt:active{transform:translateY(2px);box-shadow:0 1px 0 #5d8fc4!important}
+#card.card.playing #dlg .opt b{background:linear-gradient(180deg,#ffa23a,var(--as-orange-600))!important;box-shadow:0 2px 0 #a64310}
+#card.card.playing #dlg .opt.hint{border-color:var(--as-gold-500)!important}
+#card.card.playing #dlg .tx{background:linear-gradient(180deg,#ffffff,#eef5ff)!important;color:var(--as-ink)!important;border:2px solid #8db9e8!important;border-radius:18px!important;box-shadow:0 4px 0 #5d8fc4!important}
+#card.card.playing #dlg .nm{background:linear-gradient(180deg,#ffa23a,var(--as-orange-600))!important;color:#fff!important;border-radius:99px!important;box-shadow:0 2px 0 #a64310}
+#card.card.playing #dlg .life .lf{background:linear-gradient(180deg,#1a4a8f,var(--as-navy-800))!important;border:2px solid #5a9bea!important;color:#fff!important;border-radius:99px!important}
+/* --- หน้าหลัก: แผงเมนูแบบเกมมือถือ --- */
+.home .hb{background:linear-gradient(180deg,#0b2450,#071a3b)!important}
+.pg3{background:#ffffff14;border:1px solid #ffffff33;border-radius:16px;padding:8px 14px}
+.pbar{height:12px!important;border:1px solid #ffffff33}
+.gcards{background:linear-gradient(180deg,#12366e,#0b2450);border:1px solid #5a9bea;border-radius:var(--as-radius-lg);padding:12px 8px!important;box-shadow:var(--as-shadow-card),inset 0 1px 0 #ffffff33}
+.gc i{background:radial-gradient(circle at 35% 28%,#5aa8f2,#1458a6)!important;border:3px solid #fff!important;box-shadow:0 4px 0 #071a3b,0 8px 14px #071a3b66!important}
+.gc.main i{background:radial-gradient(circle at 35% 28%,#ffb55c,#e96a08)!important;box-shadow:0 5px 0 #a64310,0 10px 20px #e96a0866!important}
+.gc.gold i{background:radial-gradient(circle at 35% 28%,#ffe9a0,#f0a800)!important}
+.gc b{color:#fff!important;text-shadow:0 1px 0 #071a3b}
+.hb h1{background:linear-gradient(180deg,#fff,#cfe4ff);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 0 #071a3b)}
+/* --- หน้าปก: โลโก้เป็นป้ายเกม --- */
+.ctitle small{background:linear-gradient(180deg,#ff9b2f,var(--as-orange-600))!important;color:#fff!important;border:2px solid #fff;box-shadow:0 3px 0 #a64310}
+.ctitle h1{background:linear-gradient(180deg,#fff 30%,#bcdcff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 3px 0 #0b2450) drop-shadow(0 6px 14px #000a);text-shadow:none!important}
+.cchips span{background:linear-gradient(180deg,#1a4a8f,var(--as-navy-800))!important;border:2px solid #5a9bea;border-radius:99px;color:#fff;font-weight:600;box-shadow:0 3px 0 #071a3b}
+/* --- หน้าซ้อน: ท้าทายเพื่อน / ผลลัพธ์ / เกียรติบัตร --- */
+#chin,.ovl input{font-family:inherit;font-size:20px;font-weight:700;text-align:center;letter-spacing:.1em;color:var(--as-ink);background:#fff;border:3px solid #5a9bea;border-radius:999px;padding:12px 16px;width:100%;max-width:320px;min-height:48px;box-shadow:0 4px 0 #071a3b}
+#chin:focus,.ovl input:focus{outline:0;border-color:var(--as-gold-500)}
+.rkh{color:#ffd35c!important;-webkit-text-stroke:0;text-shadow:0 3px 0 #0b2450,0 0 4px #0b2450,0 0 22px #0b2450!important}
+.ovl .tiles>div{background:linear-gradient(180deg,#fff,var(--as-blue-100))!important;color:var(--as-ink);border:2px solid var(--as-border);box-shadow:var(--as-shadow-card)}
+.ovl .tiles small{color:var(--as-muted)}
+.ovl .gt2{background:#ffffff1f;border:1px solid #ffffff44;border-radius:999px;padding:6px 18px}
+.ovl.cert .chd{background:linear-gradient(180deg,#ffe08a,var(--as-gold-500));color:#4a3000!important;border-color:#fff3c4;text-shadow:none;box-shadow:0 4px 0 #a87400}
+/* --- จอเตี้ย/แคบ: ให้เมนูหน้าหลักพอดีจอ --- */
+@media (max-height:620px){.home .hero{flex-basis:clamp(180px,33dvh,260px)!important}.gcards{padding:8px 6px!important;row-gap:8px}.pg3{padding:6px 12px}}
+@media (max-width:360px){.chd{font-size:19px!important;padding:6px 16px;text-align:center}.achs2{flex-wrap:wrap}.achs2 small{flex-basis:100%}.cpill{font-size:13px;padding:5px 10px}.aq em{min-width:40px;padding:4px 8px}}
+@media (max-width:420px){.gcards{flex-wrap:wrap!important;gap:8px 4px!important}.gcards .gc{flex:1 1 22%!important;width:auto!important;max-width:25%}.gcards .gc.main{flex:1 1 100%!important;max-width:100%}.gcards .gc:not(.main) i{width:44px!important;height:44px!important;font-size:21px!important}}
+@media (min-width:601px) and (max-height:860px){#card .home .hero{flex:0 0 clamp(180px,34dvh,440px)!important}}
+@media (max-width:600px) and (orientation:portrait) and (max-height:620px){
+#card.card.playing .scene{flex:0 0 clamp(90px,17.5dvh,130px)!important}
+#card.card.playing #dlg .tx{border-width:1.5px!important;padding:5px 10px!important;box-shadow:0 3px 0 #5d8fc4!important}
+#card.card.playing #dlg .opt{border-width:1.5px!important;padding:4px 9px!important}
+#card.card.playing #dlg{gap:3px!important}
+}
 </style></head><body>
 <main class="card sc-cover" id="card">
  <section class="cover"><div class="cstripe"></div>
   <div class="ctitle"><small>ALL SELECT · SPECIALTY MOMENT</small><h1>Service<br>Simulator</h1><p>เกมฝึกบริการสไตล์เรื่องเล่า</p></div>
   <div class="cstage"><img id="c1" alt=""><img id="c2" alt=""></div><i class="pt" style="left:8%;animation-duration:9s;animation-delay:-1s"></i><i class="pt" style="left:20%;animation-duration:12s;animation-delay:-5s"></i><i class="pt" style="left:33%;animation-duration:10s;animation-delay:-8s"></i><i class="pt" style="left:46%;animation-duration:13s;animation-delay:-2s"></i><i class="pt" style="left:58%;animation-duration:9s;animation-delay:-6s"></i><i class="pt" style="left:70%;animation-duration:11s;animation-delay:-3s"></i><i class="pt" style="left:82%;animation-duration:12s;animation-delay:-9s"></i><i class="pt" style="left:92%;animation-duration:10s;animation-delay:-4s"></i><i class="pt" style="left:14%;animation-duration:14s;animation-delay:-11s"></i><i class="pt" style="left:64%;animation-duration:15s;animation-delay:-7s"></i><div class="cchips"><span>❓ 36 คำถามจริง</span><span>⚡ เล่นสั้น 5 ข้อ</span><span>🏅 ใบประกาศนียบัตร</span></div>
   <button class="btn big pulse" id="cs">▶ แตะเพื่อเริ่ม</button><small class="cf">ฝึกบริการ All Select ที่ร้านสะดวกซื้อ</small></section>
- <section class="namep"><div class="av"><img id="nav" alt=""></div><h2 id="nh">ตั้งชื่อของคุณ</h2><p>เลือกเพศและตั้งชื่อ ชื่อนี้จะขึ้นในป้ายชื่อ บทสนทนา และเกียรติบัตร</p><div class="gsel"><button class="gb on" data-g="f" type="button">👩 ผู้หญิง</button><button class="gb" data-g="m" type="button">👨 ผู้ชาย</button></div>
+ <section class="namep"><div class="av"><img id="nav" alt=""></div><h2 id="nh">ตั้งชื่อของคุณ</h2><p>เลือกเพศและตั้งชื่อ ชื่อนี้จะขึ้นในป้ายชื่อ บทสนทนา และเกียรติบัตร</p><div class="gsel"><button class="gb on" data-g="f" type="button"><img alt="" id="gbf">👩 ผู้หญิง</button><button class="gb" data-g="m" type="button"><img alt="" id="gbm">👨 ผู้ชาย</button></div>
   <input id="ni" maxlength="12" placeholder="เช่น มิ้นท์" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done"><div class="nerr" id="ne"></div><small id="pnote">ข้อมูลผู้เล่นเก็บไว้ในเครื่องนี้เท่านั้น</small>
   <button class="btn big" id="nok">ยืนยัน ▶</button><button class="ghost" id="ndel" type="button" hidden>🗑 ลบข้อมูลผู้เล่นนี้</button><button class="ghost" id="nback">← กลับหน้าปก</button></section>
  <section class="home"><div class="hero"><span class="fl" style="left:8%">☕</span><span class="fl" style="left:32%;animation-delay:2s">✨</span><span class="fl" style="left:58%;animation-delay:1s">🫘</span><span class="fl" style="left:84%;animation-delay:3s">💖</span><img id="h1" alt=""><img id="h2" alt=""><div class="hsw"><button type="button" id="hm" title="เสียงเพลง">🎵</button><button type="button" id="hs" title="เอฟเฟกต์เสียง">🔊</button><button type="button" id="hts" style="font:700 15px Prompt,sans-serif">Aa</button></div></div>
@@ -878,7 +975,7 @@ async function line(who,text,m){
  if(g!=gen)return new Promise(()=>{});sp&&sp.classList.remove("speak");mouth(0,false);tx.textContent=text;dlg.onclick=null;$("nx").hidden=false;await click($("nx"));stopVoice();
 }
 
-let DEV=false,DEVRUN=null,DEVCV="rnd",DEVHINT=false,DEVFT=false,DEVAUTO=0;const VER="v89";
+let DEV=false,DEVRUN=null,DEVCV="rnd",DEVHINT=false,DEVFT=false,DEVAUTO=0;const VER="v90";
 const TSD=[24,45,70];const TSN=["ปกติ","ช้า","ช้ามาก"];let TS=0;try{TS=Math.min(2,Math.max(0,+localStorage.getItem("acs_ts")||0))}catch(e){}
 function tsSync(){const b=$("hts");if(b){b.textContent=["Aa","ช้า","ช้า+"][TS];b.title="ความเร็วตัวอักษร: "+TSN[TS];b.dataset.n=TSN[TS]}}
 function tsCycle(){TS=(TS+1)%3;try{localStorage.setItem("acs_ts",TS)}catch(e){}tsSync();toast("ความเร็วตัวอักษร: "+TSN[TS])}
@@ -1014,10 +1111,10 @@ function touchDay(){if(!PN)return;const t=dstr(new Date()),y=dstr(new Date(Date.
 function achSub(){const e=document.getElementById("achs");if(e)e.textContent=`🪙 ${COIN} · ${ACHS.size}/${ACH.length} ความสำเร็จ`+(DAYS.n>1?` · 🔥 ${DAYS.n} วัน`:"")}
 function showAch(){qinit();const o=openOvl("","achv");const box=o.querySelector(".ovi");
  const draw=()=>{const ql=qlist();
-  box.innerHTML=`<div class="chd">🏅 ความสำเร็จ & ร้านค้า</div><p class="achp">🪙 เหรียญ <b>${COIN}</b> · 🔥 ฝึกต่อเนื่อง ${Math.max(1,DAYS.n||0)} วัน</p>
-  <div class="achs2">📅 ภารกิจวันนี้ (ผ่านแล้วรับ +10 🪙)</div><div class="achq">${ql.map(q=>{const v=Math.min(q.n,QS.p[q.k]||0),d=QS.c.includes(q.k);return `<div class="aq ${d?"on":""}"><span>${d?"✅":"⬜"} ${q.t}</span><em>${v}/${q.n}</em></div>`}).join("")}</div>
-  <div class="achs2">🛍 ร้านค้า (โชว์ข้างชื่อคุณบนหน้าหลักและเกียรติบัตร)</div><div class="achh">${HATL.map(h=>{const own=HATS.has(h[0]),eq=HAT==h[0];return `<button type="button" class="ah ${eq?"eq":""}" data-h="${h[0]}"><i>${h[0]}</i><small>${h[1]}</small><b>${eq?"สวมอยู่":own?"สวมใส่":"🪙 "+h[2]}</b></button>`}).join("")}</div>
-  <div class="achs2">🏅 ความสำเร็จ ${ACHS.size}/${ACH.length}</div><div class="achg">${ACH.map(a=>`<div class="ac ${ACHS.has(a[0])?"on":""}"><i>${ACHS.has(a[0])?a[1]:"🔒"}</i><b>${a[2]}</b><small>${a[3]}</small></div>`).join("")}</div><button class="ghost" id="abk" type="button">← กลับ</button>`;
+  box.innerHTML=`<div class="chd">🏅 ความสำเร็จ & ร้านค้า</div><p class="achp"><span class="cpill">🪙 เหรียญ <b>${COIN}</b></span><span class="cpill">🔥 ฝึกต่อเนื่อง <b>${Math.max(1,DAYS.n||0)}</b> วัน</span></p>
+  <div class="achs2">📅 ภารกิจวันนี้ <small>ผ่านแล้วรับ +10 🪙</small></div><div class="achq">${ql.map(q=>{const v=Math.min(q.n,QS.p[q.k]||0),d=QS.c.includes(q.k);return `<div class="aq ${d?"on":""}"><i class="aqi">${d?"✅":"🎯"}</i><div class="aqt"><span>${q.t}</span><div class="aqb"><u style="width:${Math.round(v/q.n*100)}%"></u></div></div><em>${d?"รับแล้ว":v+"/"+q.n}</em></div>`}).join("")}</div>
+  <div class="achs2">🛍 ร้านค้า <small>โชว์ข้างชื่อคุณบนหน้าหลักและเกียรติบัตร</small></div><div class="achh">${HATL.map(h=>{const own=HATS.has(h[0]),eq=HAT==h[0];return `<button type="button" class="ah ${eq?"eq":own?"own":""}" data-h="${h[0]}"><i>${h[0]}</i><small>${h[1]}</small><b>${eq?"✓ สวมอยู่":own?"สวมใส่":"🪙 "+h[2]}</b></button>`}).join("")}</div>
+  <div class="achs2">🏆 ความสำเร็จ <small>${ACHS.size}/${ACH.length}</small></div><div class="achg">${ACH.map(a=>`<div class="ac ${ACHS.has(a[0])?"on":""}"><i>${ACHS.has(a[0])?a[1]:"🔒"}</i><b>${a[2]}</b><small>${a[3]}</small></div>`).join("")}</div><button class="ghost" id="abk" type="button">← กลับ</button>`;
   box.querySelectorAll(".ah").forEach(b=>b.onclick=()=>{const h=HATL.find(x=>x[0]==b.dataset.h);
    if(HATS.has(h[0])){HAT=HAT==h[0]?"":h[0];sv("acs_hat",HAT);sfx("pick")}
    else if(COIN>=h[2]){COIN-=h[2];HATS.add(h[0]);HAT=h[0];sv("acs_coin",String(COIN));sv("acs_hats",[...HATS]);sv("acs_hat",HAT);sfx("win")}
@@ -1084,7 +1181,7 @@ let PG="f";try{PG=localStorage.getItem("acs_g")=="m"?"m":"f"}catch(e){}
 const conv=t=>t.replace(/ค่ะ/g,"ครับ").replace(/คะ(?!แนน)/g,"ครับ");
 SCENES.forEach(s=>s.ch.forEach(c=>c.t0=c.t));
 function applyGender(){SCENES.forEach(s=>s.ch.forEach(c=>{c.t=PG=="m"?conv(c.t0):c.t0}))}
-function rebuildChars(){try{loadApp()}catch(e){}IMG.ME=staff("talk",PG,PN);IMG.ME_H=staff("happy",PG,PN);IMG.ME_S=staff("angry",PG,PN);IMG.ME_Y=staff("say",PG,PN);$("me").src=$("h1").src=IMG.ME;$("c1").src=IMG.ME_H}
+function rebuildChars(){try{loadApp()}catch(e){}IMG.ME=staff("talk",PG,PN);IMG.ME_H=staff("happy",PG,PN);IMG.ME_S=staff("angry",PG,PN);IMG.ME_Y=staff("say",PG,PN);$("me").src=$("h1").src=IMG.ME;$("c1").src=IMG.ME_H;try{$("gbf").src=staff("happy","f",PN);$("gbm").src=staff("happy","m",PN)}catch(e){}}
 let selg=PG;
 function preview(){$("nav").src=staff("happy",selg,$("ni").value.trim().slice(0,12),undefined,null)}
 function selG(g){selg=g;document.querySelectorAll(".gb").forEach(b=>b.classList.toggle("on",b.dataset.g==g));preview()}
