@@ -595,9 +595,9 @@ button,.opt,.gc,.btn,.ghost,.gb{touch-action:manipulation;-webkit-user-select:no
 /* v86 ตอนเล่าเรื่อง: จัดข้อความกลางพื้นที่ ไม่ให้โล่ง */
 #card.card.playing #dlg:not(:has(.opt)){justify-content:center!important;gap:18px!important;padding-bottom:70px!important}
 #card.card.playing #dlg:not(:has(.opt)) .tx{font-size:clamp(18px,4.8vw,22px)!important;line-height:1.55!important;padding:18px 16px!important}
-#np{width:min(100%,320px);font-family:inherit;font-weight:600;font-size:20px;text-align:center;padding:14px;border-radius:14px;border:3px solid #3b52a0;background:#fff;color:#12203f;letter-spacing:.4em}#np:focus{outline:0;border-color:#ffd166}#np::placeholder{letter-spacing:0;font-weight:400}#ndel{font-size:14px}
+#ndel{font-size:14px}
 #pnote{color:#9fb0dc;font-size:12px;max-width:320px;line-height:1.35}
-@media (max-height:660px){.namep{gap:7px!important;padding:10px 16px!important;min-height:0!important;justify-content:flex-start!important}.namep .av{display:none!important}.namep p{display:none!important}.namep h2{font-size:22px}#ni,#np{padding:9px 12px;font-size:18px}.namep .btn.big{padding-top:10px;padding-bottom:10px}.nerr{min-height:1.1em;font-size:13px}#pnote{font-size:11px}}
+@media (max-height:660px){.namep{gap:7px!important;padding:10px 16px!important;min-height:0!important;justify-content:flex-start!important}.namep .av{display:none!important}.namep p{display:none!important}.namep h2{font-size:22px}#ni{padding:9px 12px;font-size:18px}.namep .btn.big{padding-top:10px;padding-bottom:10px}.nerr{min-height:1.1em;font-size:13px}#pnote{font-size:11px}}
 @media (orientation:landscape) and (max-height:520px){
 #card.card.playing{grid-template-columns:.8fr 1.2fr!important}
 #card.card.playing #dlg{padding:8px 14px!important;gap:5px!important;justify-content:flex-start!important}
@@ -660,8 +660,8 @@ button,.opt,.gc,.btn,.ghost,.gb{touch-action:manipulation;-webkit-user-select:no
   <div class="ctitle"><small>ALL SELECT · SPECIALTY MOMENT</small><h1>Service<br>Simulator</h1><p>เกมฝึกบริการสไตล์เรื่องเล่า</p></div>
   <div class="cstage"><img id="c1" alt=""><img id="c2" alt=""></div><i class="pt" style="left:8%;animation-duration:9s;animation-delay:-1s"></i><i class="pt" style="left:20%;animation-duration:12s;animation-delay:-5s"></i><i class="pt" style="left:33%;animation-duration:10s;animation-delay:-8s"></i><i class="pt" style="left:46%;animation-duration:13s;animation-delay:-2s"></i><i class="pt" style="left:58%;animation-duration:9s;animation-delay:-6s"></i><i class="pt" style="left:70%;animation-duration:11s;animation-delay:-3s"></i><i class="pt" style="left:82%;animation-duration:12s;animation-delay:-9s"></i><i class="pt" style="left:92%;animation-duration:10s;animation-delay:-4s"></i><i class="pt" style="left:14%;animation-duration:14s;animation-delay:-11s"></i><i class="pt" style="left:64%;animation-duration:15s;animation-delay:-7s"></i><div class="cchips"><span>❓ 36 คำถามจริง</span><span>⚡ เล่นสั้น 5 ข้อ</span><span>🏅 ใบประกาศนียบัตร</span></div>
   <button class="btn big pulse" id="cs">▶ แตะเพื่อเริ่ม</button><small class="cf">ฝึกบริการ All Select ที่ร้านสะดวกซื้อ</small></section>
- <section class="namep"><div class="av"><img id="nav" alt=""></div><h2 id="nh">ตั้งชื่อของคุณ</h2><p>เลือกเพศ ตั้งชื่อ และ PIN 4 หลัก ชื่อนี้จะขึ้นในป้ายชื่อ บทสนทนา และเกียรติบัตร</p><div class="gsel"><button class="gb on" data-g="f" type="button">👩 ผู้หญิง</button><button class="gb" data-g="m" type="button">👨 ผู้ชาย</button></div>
-  <input id="ni" maxlength="12" placeholder="เช่น มิ้นท์" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done"><input id="np" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="PIN 4 หลัก" autocomplete="off" aria-label="PIN 4 หลัก"><div class="nerr" id="ne"></div><small id="pnote">PIN ใช้แยกข้อมูลผู้เล่นในเครื่องนี้ ไม่ใช่ระบบความปลอดภัยระดับบัญชีออนไลน์</small>
+ <section class="namep"><div class="av"><img id="nav" alt=""></div><h2 id="nh">ตั้งชื่อของคุณ</h2><p>เลือกเพศและตั้งชื่อ ชื่อนี้จะขึ้นในป้ายชื่อ บทสนทนา และเกียรติบัตร</p><div class="gsel"><button class="gb on" data-g="f" type="button">👩 ผู้หญิง</button><button class="gb" data-g="m" type="button">👨 ผู้ชาย</button></div>
+  <input id="ni" maxlength="12" placeholder="เช่น มิ้นท์" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done"><div class="nerr" id="ne"></div><small id="pnote">ข้อมูลผู้เล่นเก็บไว้ในเครื่องนี้เท่านั้น</small>
   <button class="btn big" id="nok">ยืนยัน ▶</button><button class="ghost" id="ndel" type="button" hidden>🗑 ลบข้อมูลผู้เล่นนี้</button><button class="ghost" id="nback">← กลับหน้าปก</button></section>
  <section class="home"><div class="hero"><span class="fl" style="left:8%">☕</span><span class="fl" style="left:32%;animation-delay:2s">✨</span><span class="fl" style="left:58%;animation-delay:1s">🫘</span><span class="fl" style="left:84%;animation-delay:3s">💖</span><img id="h1" alt=""><img id="h2" alt=""><div class="hsw"><button type="button" id="hm" title="เสียงเพลง">🎵</button><button type="button" id="hs" title="เอฟเฟกต์เสียง">🔊</button><button type="button" id="hts" style="font:700 15px Prompt,sans-serif">Aa</button></div></div>
  <div class="hb"><h1>Service Simulator</h1><div id="ver" aria-hidden="true"></div>
@@ -878,7 +878,7 @@ async function line(who,text,m){
  if(g!=gen)return new Promise(()=>{});sp&&sp.classList.remove("speak");mouth(0,false);tx.textContent=text;dlg.onclick=null;$("nx").hidden=false;await click($("nx"));stopVoice();
 }
 
-let DEV=false,DEVRUN=null,DEVCV="rnd",DEVHINT=false,DEVFT=false,DEVAUTO=0;const VER="v88";
+let DEV=false,DEVRUN=null,DEVCV="rnd",DEVHINT=false,DEVFT=false,DEVAUTO=0;const VER="v89";
 const TSD=[24,45,70];const TSN=["ปกติ","ช้า","ช้ามาก"];let TS=0;try{TS=Math.min(2,Math.max(0,+localStorage.getItem("acs_ts")||0))}catch(e){}
 function tsSync(){const b=$("hts");if(b){b.textContent=["Aa","ช้า","ช้า+"][TS];b.title="ความเร็วตัวอักษร: "+TSN[TS];b.dataset.n=TSN[TS]}}
 function tsCycle(){TS=(TS+1)%3;try{localStorage.setItem("acs_ts",TS)}catch(e){}tsSync();toast("ความเร็วตัวอักษร: "+TSN[TS])}
@@ -1045,65 +1045,40 @@ const esc=t=>t.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&q
 let PN="",LASTN="";try{LASTN=(localStorage.getItem("acs_name")||"").slice(0,12)}catch(e){}
 function screen(n){card.classList.remove("sc-cover","sc-name","playing");if(n!="menu")card.classList.add("sc-"+n);window.scrollTo(0,0)}
 function hello(){$("hello").textContent=PN?"สวัสดี "+(HAT?HAT+" ":"")+"คุณ"+PN+" ✏️":"ตั้งชื่อของคุณ ✏️"}
-function toName(){$("ni").value=PN||LASTN;$("np").value="";$("ne").textContent="";nameSync();screen("name");setTimeout(()=>{try{$("ni").focus()}catch(e){}},50)}
+function toName(){$("ni").value=PN||LASTN;$("ne").textContent="";nameSync();screen("name");setTimeout(()=>{try{$("ni").focus()}catch(e){}},50)}
 $("c1").src=$("nav").src=IMG.ME_H;$("c2").src=IMG.HAPPY;
 $("cs").onclick=()=>{ac();if(S.music)startMusic();sfx("tap");toName()};
 $("nback").onclick=()=>{sfx("tap");screen("cover")};
-/* ===== v87 ผู้เล่นหลายคน + PIN 4 หลัก =====
-   PIN ใช้แยกข้อมูลผู้เล่นในเครื่องเดียวกันเท่านั้น ไม่ใช่ระบบความปลอดภัยระดับบัญชีออนไลน์
-   ข้อมูลทั้งหมดอยู่ใน localStorage ของเบราว์เซอร์ ผู้ที่เข้าถึงเครื่องหรือข้อมูลเบราว์เซอร์แก้ไขหรือลบได้เสมอ
-   เก็บ PIN เป็น PBKDF2-SHA256 (150,000 รอบ) พร้อม salt สุ่มแยกผู้เล่น; ถ้า Web Crypto ใช้ไม่ได้จะไม่ลดระดับเป็นแฮชอ่อน */
+/* ===== v89 ผู้เล่นหลายคน (ถอดระบบ PIN ออกแล้ว) =====
+   ชื่อผู้เล่นและเพศเก็บใน acs_players; ข้อมูลของแต่ละคนแยกด้วยคีย์ BASEK_ชื่อ ใน localStorage ของเบราว์เซอร์
+   ไม่มีรหัสผ่าน: ผู้ที่เข้าถึงเครื่องนี้เลือกหรือลบผู้เล่นได้ การลบมีหน้าต่างยืนยันกันกดพลาด */
 const PLK="acs_players",BASEK=["acs_wr","acs_seen","acs_done","acs_best","acs_chal","acs_ach","acs_day","acs_q","acs_hats","acs_hat","acs_coin","acs_rounds","acs_short"];
 let PLY={};try{PLY=JSON.parse(localStorage.getItem(PLK)||"{}")||{}}catch(e){PLY={}}
 const plSave=()=>{try{localStorage.setItem(PLK,JSON.stringify(PLY))}catch(e){}};
-const WC=(window.crypto&&window.crypto.subtle&&window.crypto.getRandomValues)?window.crypto.subtle:null,PBI=150000;
-const b64=u=>btoa(String.fromCharCode.apply(null,u)),unb64=t=>Uint8Array.from(atob(t),c=>c.charCodeAt(0));
-async function pinDerive(pin,salt,it){const k=await WC.importKey("raw",new TextEncoder().encode(pin),"PBKDF2",false,["deriveBits"]);return b64(new Uint8Array(await WC.deriveBits({name:"PBKDF2",hash:"SHA-256",salt,iterations:it},k,256)))}
-async function pinMake(pin){const salt=crypto.getRandomValues(new Uint8Array(16));return{s:b64(salt),i:PBI,h:await pinDerive(pin,salt,PBI)}}
-async function pinOk(e,pin){if(!e||!e.s||!e.h)return false;return(await pinDerive(pin,unb64(e.s),e.i||PBI))===e.h}
+/* ย้ายข้อมูลจาก v87/v88: เก็บชื่อและเพศไว้ ตัดเฉพาะฟิลด์รหัสผ่านเดิมทิ้ง (ไม่แตะคะแนน/สถิติของผู้เล่น) */
+(function(){let ch=false;for(const k of Object.keys(PLY)){let e=PLY[k];if(!e||typeof e!="object"||Array.isArray(e)){PLY[k]={};ch=true;continue}
+ for(const f of["s","i","h","f","u"])if(f in e){delete e[f];ch=true}}if(ch)plSave()})();
 const plFind=n=>Object.keys(PLY).find(k=>k.toLowerCase()==String(n).toLowerCase());
 const hasLegacy=n=>{try{return BASEK.some(k=>localStorage.getItem(k+"_"+n)!=null)}catch(e){return false}};
-const lockLeft=e=>e&&e.u?Math.max(0,Math.ceil((e.u-Date.now())/1000)):0;
-function pinFail(e){e.f=(e.f||0)+1;if(e.f>=5){e.u=Date.now()+60000;e.f=0}plSave()}
-let BUSY=false;
 function nameSync(){const v=$("ni").value.trim(),k=plFind(v),leg=!k&&v&&hasLegacy(v);
  if(k&&PLY[k].g)selG(PLY[k].g);else selG(PG);
  $("nh").textContent=k||leg?"ยินดีต้อนรับกลับ!":"ตั้งชื่อของคุณ";$("ndel").hidden=!k;
- $("np").placeholder=leg?"ตั้ง PIN 4 หลักใหม่":k?"PIN ของคุณ":"ตั้ง PIN 4 หลัก";
- if(leg)$("ne").textContent="ชื่อนี้มีข้อมูลเดิมในเครื่อง ตั้ง PIN ใหม่เพื่อใช้ข้อมูลเดิมต่อ";
- if(!WC)$("ne").textContent="เบราว์เซอร์นี้ไม่รองรับ PIN แบบปลอดภัย (ต้องเปิดผ่านลิงก์ https)"}
-$("nok").onclick=async()=>{if(BUSY)return;const v=$("ni").value.trim(),pin=$("np").value.trim(),er=m=>{$("ne").textContent=m;sfx("bad")};
- if(!v){er("กรุณาใส่ชื่อก่อนนะ");return}
- if(!/^\d{4}$/.test(pin)){er("PIN ต้องเป็นตัวเลข 4 หลัก");return}
- if(!WC){er("เบราว์เซอร์นี้ไม่รองรับ PIN แบบปลอดภัย (ต้องเปิดผ่านลิงก์ https) จึงเข้าเล่นแบบมีชื่อไม่ได้");return}
- BUSY=true;$("nok").disabled=true;
- try{let key=plFind(v);
-  if(key){const e=PLY[key],L=lockLeft(e);if(L>0){er("ใส่ PIN ผิดหลายครั้ง รออีก "+L+" วินาที");return}
-   if(!(await pinOk(e,pin))){pinFail(e);er(lockLeft(e)>0?"ใส่ PIN ผิดหลายครั้ง ล็อก 60 วินาที":"PIN ไม่ถูกต้อง");return}
-   e.f=0;e.u=0}
-  else{key=v.slice(0,12);
-   if(hasLegacy(key)&&!confirm("ชื่อ “"+key+"” มีข้อมูลเดิมในเครื่องนี้ ต้องการตั้ง PIN นี้และใช้ข้อมูลเดิมต่อใช่ไหม?"))return;
-   PLY[key]=await pinMake(pin)}
-  PLY[key].g=selg;plSave();
-  PN=key;try{localStorage.setItem("acs_name",PN)}catch(e){}loadProg();showBest();PG=selg;try{localStorage.setItem("acs_g",PG)}catch(e){}rebuildChars();applyGender();sfx("pick");hello();screen("menu")}
- catch(err){er("ตั้ง/ตรวจ PIN ไม่สำเร็จ ลองใหม่อีกครั้ง")}
- finally{BUSY=false;$("nok").disabled=false}};
-$("ndel").onclick=async()=>{if(BUSY)return;const v=$("ni").value.trim(),k=plFind(v),pin=$("np").value.trim();
- if(!k||!WC)return;const e=PLY[k],L=lockLeft(e);
- if(L>0){$("ne").textContent="ใส่ PIN ผิดหลายครั้ง รออีก "+L+" วินาที";sfx("bad");return}
- if(!/^\d{4}$/.test(pin)){$("ne").textContent="ใส่ PIN 4 หลักของผู้เล่นนี้เพื่อลบข้อมูล";sfx("bad");return}
- BUSY=true;let ok=false;try{ok=await pinOk(e,pin)}catch(x){}BUSY=false;
- if(!ok){pinFail(e);$("ne").textContent=lockLeft(e)>0?"ใส่ PIN ผิดหลายครั้ง ล็อก 60 วินาที":"PIN ไม่ถูกต้อง";sfx("bad");return}
- e.f=0;e.u=0;plSave();
+ if(leg)$("ne").textContent="ชื่อนี้มีข้อมูลเดิมในเครื่อง จะใช้ข้อมูลเดิมต่อ"}
+$("nok").onclick=()=>{const v=$("ni").value.trim();
+ if(!v){$("ne").textContent="กรุณาใส่ชื่อก่อนนะ";sfx("bad");return}
+ const key=plFind(v)||v.slice(0,12);
+ if(!PLY[key])PLY[key]={};
+ PLY[key].g=selg;plSave();
+ PN=key;try{localStorage.setItem("acs_name",PN)}catch(e){}loadProg();showBest();PG=selg;try{localStorage.setItem("acs_g",PG)}catch(e){}rebuildChars();applyGender();sfx("pick");hello();screen("menu")};
+$("ndel").onclick=()=>{const v=$("ni").value.trim(),k=plFind(v);
+ if(!k)return;
  if(!confirm("ลบข้อมูลของ “"+k+"” ทั้งหมด (คะแนน เหรียญ ความสำเร็จ เกียรติบัตร) ลบแล้วกู้คืนไม่ได้ ยืนยันหรือไม่?"))return;
  try{BASEK.forEach(b=>localStorage.removeItem(b+"_"+k));if(localStorage.getItem("acs_name")==k)localStorage.removeItem("acs_name")}catch(x){}
  delete PLY[k];plSave();
  if(PN==k){PN="";loadProg();showBest();hello()}if(LASTN==k)LASTN="";
- $("ni").value="";$("np").value="";$("ne").textContent="ลบข้อมูลแล้ว";nameSync();sfx("tap")};
-$("np").addEventListener("input",()=>{$("np").value=$("np").value.replace(/\D/g,"").slice(0,4);$("ne").textContent=""});
-$("np").addEventListener("keydown",e=>{if(e.key=="Enter")$("nok").click()});
+ $("ni").value="";$("ne").textContent="ลบข้อมูลแล้ว";nameSync();sfx("tap")};
 $("ni").addEventListener("input",()=>$("ne").textContent="");
-$("ni").addEventListener("keydown",e=>{if(e.key=="Enter"){if($("np").value.length<4)$("np").focus();else $("nok").click()}});$("ni").addEventListener("input",nameSync);
+$("ni").addEventListener("keydown",e=>{if(e.key=="Enter")$("nok").click()});$("ni").addEventListener("input",nameSync);
 $("hello").onclick=()=>{sfx("tap");toName()};
 let PG="f";try{PG=localStorage.getItem("acs_g")=="m"?"m":"f"}catch(e){}
 const conv=t=>t.replace(/ค่ะ/g,"ครับ").replace(/คะ(?!แนน)/g,"ครับ");
