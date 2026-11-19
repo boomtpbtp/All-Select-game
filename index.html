@@ -965,7 +965,7 @@ async function line(who,text,m){
  if(g!=gen)return new Promise(()=>{});sp&&sp.classList.remove("speak");mouth(0,false);tx.textContent=text;dlg.onclick=null;$("nx").hidden=false;await click($("nx"));stopVoice();
 }
 
-let DEV=false,DEVRUN=null,DEVCV="rnd",DEVHINT=false,DEVFT=false,DEVAUTO=0;const VER="v94";
+let DEV=false,DEVRUN=null,DEVCV="rnd",DEVHINT=false,DEVFT=false,DEVAUTO=0;const VER="v95";
 const TSD=[24,45,70];const TSN=["ปกติ","ช้า","ช้ามาก"];let TS=0;try{TS=Math.min(2,Math.max(0,+localStorage.getItem("acs_ts")||0))}catch(e){}
 function tsSync(){const b=$("hts");if(b){b.textContent=["Aa","ช้า","ช้า+"][TS];b.title="ความเร็วตัวอักษร: "+TSN[TS];b.dataset.n=TSN[TS]}}
 function tsCycle(){TS=(TS+1)%3;try{localStorage.setItem("acs_ts",TS)}catch(e){}tsSync();toast("ความเร็วตัวอักษร: "+TSN[TS])}
@@ -1024,7 +1024,7 @@ function rankScreen(f,explain,label){wl(false);
 }
 const grade=p=>p>=.9?"🏆 พนักงานดีเด่น":p>=.7?"👍 บริการดีมาก":p>=.5?"🙂 พอใช้ ฝึกอีกนิด":"💪 ฝึกต่อได้อีกนิด";
 /* ===== v61 ความสำเร็จ + สตรีครายวัน ===== */
-const ACH=[["first","🌱","ก้าวแรก","ตอบถูกตั้งแต่ครั้งแรกเป็นข้อแรก"],["combo5","🔥","คอมโบ x5","ตอบถูกตั้งแต่ครั้งแรกติดกัน 5 ข้อ"],["perfect","💯","เต็มร้อย","จบรอบ 10 ข้อ ถูกครั้งแรกทุกข้อ"],["round1","🎯","จบรอบแรก","เล่นครบรอบ 10 ข้อ"],["round3","🏃","ขาประจำ","เล่นครบ 3 รอบ"],["review","🔁","แก้ตัวสำเร็จ","ผ่านโหมดทบทวนข้อที่เคยผิด"],["day3","📅","มาทุกวัน","ฝึกต่อเนื่อง 3 วันติด"],["chal","🤝","นักท้าทาย","เล่นโหมดท้าทายเพื่อนจนจบ 1 ชุด"]];
+const ACH=[["first","🌱","ก้าวแรก","ตอบถูกตั้งแต่ครั้งแรกเป็นข้อแรก"],["combo5","🔥","คอมโบ x5","ตอบถูกตั้งแต่ครั้งแรกติดกัน 5 ข้อ"],["perfect","💯","เต็มร้อย","จบรอบ 10 ข้อ ถูกครั้งแรกทุกข้อ"],["round1","🎯","จบรอบแรก","เล่นครบรอบ 10 ข้อ"],["round3","🏃","ขาประจำ","เล่นครบ 3 รอบ"],["review","🔁","แก้ตัวสำเร็จ","ผ่านโหมดทบทวนข้อที่เคยผิด"],["day3","📅","มาทุกวัน","ฝึกต่อเนื่อง 3 วันติด"],["explorer","🧭","นักสำรวจ","เล่นโหมดท้าทายครบคลัง 36 ข้อจนจบ"]];
 let ACHS=new Set(),DAYS={d:"",n:0},COIN=0,QS={d:"",p:{},c:[]},HATS=new Set(),HAT="";
 const HATL=[["🎀","ริบบิ้น",15],["🧢","หมวกแก๊ป",25],["🎧","หูฟัง",35],["🎩","หมวกทรงสูง",45],["👑","มงกุฎ",60],["🌸","ดอกไม้",20]];window.__HATL=HATL.map(h=>h[0]);window.__hat=()=>HAT;
 const sv=(k,v)=>{try{localStorage.setItem(PK(k),typeof v=="string"?v:JSON.stringify(v))}catch(e){}};
@@ -1035,7 +1035,7 @@ function addCoin(n){if(!PN)return;COIN+=n;sv("acs_coin",String(COIN));achSub()}
 function qprog(k,v,mode){if(!PN)return;qinit();const q=qlist().find(x=>x.k==k);if(!q)return;QS.p[k]=mode=="max"?Math.max(QS.p[k]||0,v):(QS.p[k]||0)+v;
  if(QS.p[k]>=q.n&&!QS.c.includes(k)){QS.c.push(k);addCoin(10);try{toast("✅ ภารกิจวันนี้สำเร็จ +10 🪙")}catch(e){}}sv("acs_q",QS)}
 window.__coin=addCoin;window.__qprog=qprog;
-function loadAch(){COIN=0;try{COIN=+localStorage.getItem(PK("acs_coin"))||0}catch(e){}try{QS=JSON.parse(localStorage.getItem(PK("acs_q"))||"null")||{d:"",p:{},c:[]}}catch(e){QS={d:"",p:{},c:[]}}try{HATS=new Set(JSON.parse(localStorage.getItem(PK("acs_hats"))||"[]"))}catch(e){HATS=new Set()}HAT=(localStorage.getItem(PK("acs_hat"))||"");if(!HATS.has(HAT))HAT="";try{ACHS=new Set(JSON.parse(localStorage.getItem(PK("acs_ach"))||"[]"))}catch(e){ACHS=new Set()}try{DAYS=JSON.parse(localStorage.getItem(PK("acs_day"))||"null")||{d:"",n:0}}catch(e){DAYS={d:"",n:0}}}
+function loadAch(){COIN=0;try{COIN=+localStorage.getItem(PK("acs_coin"))||0}catch(e){}try{QS=JSON.parse(localStorage.getItem(PK("acs_q"))||"null")||{d:"",p:{},c:[]}}catch(e){QS={d:"",p:{},c:[]}}try{HATS=new Set(JSON.parse(localStorage.getItem(PK("acs_hats"))||"[]"))}catch(e){HATS=new Set()}HAT=(localStorage.getItem(PK("acs_hat"))||"");if(!HATS.has(HAT))HAT="";try{ACHS=new Set(JSON.parse(localStorage.getItem(PK("acs_ach"))||"[]"))}catch(e){ACHS=new Set()}try{/* v95: ความสำเร็จเดิม chal เปลี่ยนเป็น explorer (คงสถานะปลดล็อกเดิม) และตัด id ที่ไม่อยู่ในรายการ */const had=ACHS.size;if(ACHS.has("chal")){ACHS.delete("chal");ACHS.add("explorer")}[...ACHS].forEach(i=>{if(!ACH.some(a=>a[0]==i))ACHS.delete(i)});if(PN&&(ACHS.size!=had||localStorage.getItem(PK("acs_ach"))!=null&&localStorage.getItem(PK("acs_ach")).indexOf("chal")>=0))localStorage.setItem(PK("acs_ach"),JSON.stringify([...ACHS]))}catch(e){}try{DAYS=JSON.parse(localStorage.getItem(PK("acs_day"))||"null")||{d:"",n:0}}catch(e){DAYS={d:"",n:0}}}
 function ach(id){if(!PN||ACHS.has(id))return;const a=ACH.find(x=>x[0]==id);if(!a)return;ACHS.add(id);try{localStorage.setItem(PK("acs_ach"),JSON.stringify([...ACHS]))}catch(e){}
  try{sfx("win");toast("🏅 ปลดล็อก: "+a[2])}catch(e){}achSub()}
 const dstr=d=>d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
@@ -1283,7 +1283,7 @@ async function play(mode,NQ){
    await sleep(DEVFT?200:1000);
    if(c.ok){if(mode!="dev"&&mode!="short")addCoin(tries==1?2:1);score+=tries==1?10:5;if(tries==1)f1++;up();$("pg").style.width=((si+1)/N*100)+"%";
     const GL=ST?STORY.good(ST,s,CUR):null;for(const [w,t] of (GL?[["c",GL]]:s.good))await line(w,w=="c"?CT(t):t,"happy");await line("n",s.goodEnd[0],"happy");if(last&&ST){const ep=STORY.close(ST,sat);if(ep)await line("n",ep,"happy")}
-    const full=last&&mode=="all"&&N>=10,full36=full&&N>=SCENES.length,rvw=last&&mode=="review",sht=last&&mode=="short";if(last){sfx("win");burst(40);if(full){fin(score/(N*10),0);markDone("q",score/(N*10));if(full36)markDone("f",score/(N*10));ach("round1");addCoin(10);qprog("round",1);if(score>=N*10)ach("perfect");try{const k=PK("acs_rounds"),n=(+localStorage.getItem(k)||0)+1;localStorage.setItem(k,n);if(n>=3)ach("round3")}catch(e){}}
+    const full=last&&mode=="all"&&N>=10,full36=full&&N>=SCENES.length,rvw=last&&mode=="review",sht=last&&mode=="short";if(last){sfx("win");burst(40);if(full){fin(score/(N*10),0);markDone("q",score/(N*10));if(full36){markDone("f",score/(N*10));ach("explorer")}ach("round1");addCoin(10);qprog("round",1);if(score>=N*10)ach("perfect");try{const k=PK("acs_rounds"),n=(+localStorage.getItem(k)||0)+1;localStorage.setItem(k,n);if(n>=3)ach("round3")}catch(e){}}
      if(sht){const pc=Math.round(score/(N*10)*100);SH={best:Math.max(SH.best||0,pc),plays:(SH.plays||0)+1,last:pc};sv("acs_short",SH);showBest()}
      if(rvw&&f1>=Math.ceil(N/2))ach("review")}
     const gr=last?grade(score/(N*10))+(PN?" · "+esc(PN):""):"",extra=last?`<br><b>คะแนนรวม ${score}/${N*10}</b> · ถูกตั้งแต่ครั้งแรก ${f1}/${N} ข้อ · ความพอใจลูกค้า ${sat}%`:"";
