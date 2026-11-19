@@ -1329,9 +1329,9 @@ function pick(S,id,pool){const all=pool.map((_,i)=>i),c=all.filter(i=>!S.used.ha
 const tyOf=v=>String(v).replace(/\d+$/,"");
 const isPar=s=>String(s.q)[0]=="(";
 return{
- begin(mode,N){try{load();let t;do{t=TH[R(4)]}while(t==MEM.t);MEM.t=t;
-  const S={t,N,used:new Set(),R:null,cb:-9,op:(mode=="all"||mode=="chal")&&N>=10,ret:[]};
-  if(N>=8)S.ret=[3+R(2),7+R(2)].filter(x=>x<N);save();return S}catch(e){return null}},
+ begin(mode,N){try{load();const SHIFT=(mode=="all"||mode=="chal")&&N==10;let t;do{t=TH[R(4)]}while(t==MEM.t);MEM.t=t;
+  const S={t,N,used:new Set(),R:null,cb:-9,op:SHIFT,ret:[]};
+  if(SHIFT)S.ret=[3+R(2),7+R(2)].filter(x=>x<N);save();return S}catch(e){return null}},
  isRet(S,si){return !!S&&S.R!=null&&S.ret.indexOf(si)>=0},
  setR(S,si,v){if(S&&si==0)S.R=v},
  intro(S,si,s,v,streak,sat){try{const par=isPar(s),st=si/S.N<.34?0:si/S.N<.7?1:2,out=[];
