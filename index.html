@@ -1268,7 +1268,7 @@ async function play(mode,NQ){
  let RUN=mode=="review"?shuf(SCENES.filter(s=>WR.has(s.topic))):[];
  if(mode=="dev"&&DEVRUN&&DEVRUN.length){RUN=DEVRUN.slice();DEVRUN=null}
  if(!RUN.length){if(mode=="review"){toast("ไม่มีข้อที่ต้องทบทวนแล้ว 🎉");goHome();return}if(mode!="short")mode="all";RUN=mode=="short"?drawShort(NQ):drawDeck(NQ)}
- if(mode=="all")ROUND++;gen++;const G=gen;card.classList.add("playing");pushH();wl(true);mood("talk");$("fx").innerHTML="";setSat(100);let score=0,f1=0,streak=0,bonus=0;const N=RUN.length;const ST=mode=="dev"?null:STORY.begin(mode,N);LIFE=mode!="dev"&&mode!="short";
+ if(mode=="all")ROUND++;gen++;const G=gen;card.classList.add("playing");pushH();wl(true);mood("talk");$("fx").innerHTML="";setSat(100);let score=0,f1=0,streak=0,bonus=0;const N=RUN.length;const ST=(mode=="all"&&N==10)?STORY.begin(mode,N):null;LIFE=mode!="dev"&&mode!="short";
  for(let si=0;si<N;si++){
   const s=RUN[si],last=si==N-1;let first=true,tries=0;
   if(mode!="dev"&&mode!="short"){SEEN.add(s.topic);try{localStorage.setItem(PK("acs_seen"),JSON.stringify([...SEEN]))}catch(e){}}
