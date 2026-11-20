@@ -51,7 +51,7 @@ body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family
 /* v82 single-screen icon UI */
 .card:not(.playing):not(.sc-cover):not(.sc-name) .home{display:flex!important;flex-direction:column;height:100dvh;max-height:100dvh;overflow:hidden}
 .card:not(.playing):not(.sc-cover):not(.sc-name) .home .hb{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-evenly;align-items:center;padding:6px 14px max(14px,env(safe-area-inset-bottom));gap:8px;min-height:0;overflow:hidden}
-.card:not(.playing):not(.sc-cover):not(.sc-name) .home .hb>h1,.card:not(.playing):not(.sc-cover):not(.sc-name) .home #trophy,.card:not(.playing):not(.sc-cover):not(.sc-name) .home .hb>small,.card:not(.playing):not(.sc-cover):not(.sc-name) .home #ver{display:none!important}
+.card:not(.playing):not(.sc-cover):not(.sc-name) .home .hb>h1,.card:not(.playing):not(.sc-cover):not(.sc-name) .home .hb>small,.card:not(.playing):not(.sc-cover):not(.sc-name) .home #ver{display:none!important}
 .card:not(.playing):not(.sc-cover):not(.sc-name) .home .hello{margin:0!important;max-width:100%}
 .card:not(.playing):not(.sc-cover):not(.sc-name) .home .pg3{width:100%;max-width:420px;margin:0}
 .card:not(.playing):not(.sc-cover):not(.sc-name) .home .gcards{display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;row-gap:12px;justify-content:center;align-items:flex-end;gap:clamp(6px,2.4vw,16px);width:100%;margin:0;padding:0}
@@ -211,8 +211,6 @@ body{align-items:flex-start;background:linear-gradient(160deg,var(--bg),var(--bg
 .gsel{display:flex;gap:10px}
 .gb{font-family:inherit;font-size:16px;padding:10px 18px;border-radius:14px;border:3px solid #3b52a0;background:#1f3270;color:#fff;cursor:pointer}
 .gb.on{border-color:#ffd166;background:#f26a21}
-.cert{margin-top:8px;background:linear-gradient(#fff8e1,#ffe9a8);color:#5a3b00;border:3px double #c9962b;border-radius:12px;padding:10px 14px;text-align:center;line-height:1.5}
-.cert b{font-size:20px}
 
 /* ===== mobile-first fit ===== */
 html,body{min-height:100dvh;-webkit-text-size-adjust:100%}
@@ -305,7 +303,7 @@ body{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .hello{font-family:inherit;font-size:15px;background:#ffffff14;border:1.5px dashed #ffd16688;border-radius:20px;padding:6px 16px;cursor:pointer;min-height:0}
 .pg3{width:100%}.ptxt{display:flex;justify-content:space-between;font-size:13px;color:#c8d3f0;margin-bottom:5px}
 .pbar{height:10px;border-radius:6px;background:#ffffff22;overflow:hidden}.pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#f26a21,#ffd166);transition:width .6s}
-#trophy{width:100%}#trophy .cert{margin:0}
+
 .gcards{display:flex;flex-direction:column;gap:10px;width:100%;margin:2px 0}
 .life{display:flex;gap:8px;align-items:center;margin:2px 0 6px}.lf{flex:1;font:inherit;font-size:13px;font-weight:600;color:#fff;background:#2b4090;border:2px solid #4a63b8;border-radius:12px;padding:8px 6px;min-height:44px;cursor:pointer}.lf em{font-style:normal;color:#ffd166}.lf:disabled{opacity:.4}.life span{font-size:13px;font-weight:700;color:#ffd166;white-space:nowrap}.opt.gone{opacity:.22;pointer-events:none;text-decoration:line-through}
 @media (min-width:601px) and (min-height:560px){.card.playing .scene.q3{flex-basis:clamp(340px,56dvh,560px)}.card.playing .scene.q3::before{background:linear-gradient(#0e1a3acc,#0e1a3a00);border-bottom:0;height:96px}.card.playing .scene.q3::after{top:0}}
@@ -341,8 +339,6 @@ body{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .rbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--g),#fff);border-radius:8px}
 .rnx{font-size:13px;color:#c8d3f0}
 .rstat{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;font-size:13px;color:#fff}.rstat span{background:#ffffff1c;border-radius:14px;padding:4px 12px}.rstat span:empty{display:none}
-.cert2{width:min(94%,360px);background:linear-gradient(#fff8e1,#ffe9a8);color:#5a3b00;border:3px double #c9962b;border-radius:14px;padding:10px 14px;display:flex;flex-direction:column;gap:2px;box-shadow:0 6px 18px #0004}
-.cert2 b{font-size:22px}.cert2 span{font-size:12px}
 .ex2{width:100%;text-align:left;color:#c8d3f0;font-size:14px}.ex2 summary{cursor:pointer;text-align:center;padding:4px}
 .rk .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:4px}
 .card.playing .dlg:has(.rk){justify-content:flex-start}.dlg>.rk{margin:auto 0}
@@ -375,17 +371,12 @@ body{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .xpn{font-size:13px;color:#ffd166;margin-top:6px;text-align:center}
 .tiles{display:flex;gap:8px;width:100%}.tiles>div{flex:1;background:#ffffff14;border-radius:14px;padding:8px 6px;text-align:center}
 .tiles b{display:block;font-size:17px}.tiles small{display:block;font-size:11px;color:#c8d3f0;line-height:1.3}
-.cbtn{background:linear-gradient(#ffd166,#e8a200);color:#3a2a00;box-shadow:0 5px 0 #8a5f00}
 .row2{display:flex;gap:10px;width:100%}.row2 .ghost{flex:1;color:#fff;border-color:#4a63b8}
 .ovl .ex2{width:100%;color:#c8d3f0;font-size:14px}.ovl .ex2 summary{cursor:pointer;text-align:center;padding:6px}
 .ovl .ex{background:#fff;color:#3a2a1a;border-radius:10px;padding:10px 12px;margin-top:6px}
-.ovl.cert{background:radial-gradient(circle at 50% 0,#33261a,#120d08 75%)}
 .chd{font-size:20px;font-weight:700;color:#ffd166}
-.cwrap{width:100%;min-height:200px;display:grid;place-items:center}
-.cimg{width:100%;max-width:420px;border-radius:6px;box-shadow:0 12px 40px #000a;animation:pop .6s both}
-.cld{color:#c8d3f0}.chn{color:#a99c85;text-align:center}
+.chn{color:#a99c85;text-align:center}
 .ovl .btn.big{width:100%;max-width:340px;font-size:18px;padding:13px;border:0;border-radius:14px;font-family:inherit;font-weight:700;cursor:pointer;color:#fff;background:#0a8f4d;box-shadow:0 5px 0 #05562d}
-.ovl .btn.big.cbtn{color:#3a2a00}
 
 /* ===== ด่านขั้นตอนบริการ ===== */
 .fc.lock{pointer-events:none}.fc.lock:not(.done){opacity:.55}
@@ -659,15 +650,14 @@ button,.opt,.gc,.btn,.ghost,.gb{touch-action:manipulation;-webkit-user-select:no
 /* ปุ่มหลัก = ส้ม 3D / ปุ่มรอง = ฟ้าอ่อน */
 #card .btn.big,.ovl .btn.big,.namep .btn.big{background:linear-gradient(180deg,#ffa23a,var(--as-orange-600))!important;color:#fff!important;border:0!important;border-radius:999px!important;box-shadow:0 5px 0 #a64310,0 10px 22px rgba(233,106,8,.35)!important;font-weight:700;letter-spacing:.2px;min-height:48px;text-shadow:0 1px 0 #a6431088}
 #card .btn.big:active,.ovl .btn.big:active{transform:translateY(3px);box-shadow:0 2px 0 #a64310!important}
-.ovl .btn.big.cbtn{background:linear-gradient(180deg,#ffe08a,var(--as-gold-500))!important;color:#4a3000!important;box-shadow:0 5px 0 #a87400,0 10px 22px rgba(255,197,51,.35)!important;text-shadow:none}
 #card .ghost,.ovl .ghost,.row2 .ghost{background:linear-gradient(180deg,#fff,var(--as-blue-100))!important;color:var(--as-navy-900)!important;border:1px solid #8db9e8!important;border-radius:999px!important;min-height:44px;padding:10px 20px;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 3px 0 #5d8fc4}
 #card .ghost:active,.ovl .ghost:active{transform:translateY(2px);box-shadow:0 1px 0 #5d8fc4}
 #card button:focus-visible,.ovl button:focus-visible,.ovl input:focus-visible{outline:0;box-shadow:var(--as-focus)}
 /* ป้ายชื่อผู้เล่น */
 #card .hello{background:linear-gradient(180deg,#1a4a8f,var(--as-navy-800))!important;border:2px solid #5a9bea!important;color:#fff!important;font-weight:700;box-shadow:0 3px 0 #071a3b}
-/* หน้าซ้อน (ความสำเร็จ ร้านค้า ภารกิจ ผลลัพธ์ ท้าทาย) */
-.ovl:not(.cert){background:linear-gradient(180deg,rgba(7,26,59,.88),rgba(11,36,80,.95)),#071a3b}
-.ovl:not(.cert)::before{content:"";position:fixed;inset:-24px;z-index:-1;background:var(--hero) 50% 30%/cover no-repeat;filter:blur(10px) saturate(1.15);opacity:.55}
+/* หน้าซ้อน (ความสำเร็จ ร้านค้า ภารกิจ ผลลัพธ์) */
+.ovl:is(.ovl){background:linear-gradient(180deg,rgba(7,26,59,.88),rgba(11,36,80,.95)),#071a3b}
+.ovl:is(.ovl)::before{content:"";position:fixed;inset:-24px;z-index:-1;background:var(--hero) 50% 30%/cover no-repeat;filter:blur(10px) saturate(1.15);opacity:.55}
 .ovl{isolation:isolate}
 .chd{font-size:22px!important;color:#fff!important;text-shadow:0 2px 0 #0b245099;background:linear-gradient(180deg,#2a6fc4,var(--as-blue-700));border:1px solid #6aa8ee;border-radius:999px;padding:8px 22px;box-shadow:0 4px 0 #0b2450,0 8px 18px #071a3b66}
 .achp{margin:0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
@@ -732,14 +722,13 @@ button,.opt,.gc,.btn,.ghost,.gb{touch-action:manipulation;-webkit-user-select:no
 .ctitle small{background:linear-gradient(180deg,#ff9b2f,var(--as-orange-600))!important;color:#fff!important;border:2px solid #fff;box-shadow:0 3px 0 #a64310}
 .ctitle h1{background:linear-gradient(180deg,#fff 30%,#bcdcff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 3px 0 #0b2450) drop-shadow(0 6px 14px #000a);text-shadow:none!important}
 .cchips span{background:linear-gradient(180deg,#1a4a8f,var(--as-navy-800))!important;border:2px solid #5a9bea;border-radius:99px;color:#fff;font-weight:600;box-shadow:0 3px 0 #071a3b}
-/* --- หน้าซ้อน: ท้าทายเพื่อน / ผลลัพธ์ / เกียรติบัตร --- */
+/* --- หน้าซ้อน: ผลลัพธ์ --- */
 #chin,.ovl input{font-family:inherit;font-size:20px;font-weight:700;text-align:center;letter-spacing:.1em;color:var(--as-ink);background:#fff;border:3px solid #5a9bea;border-radius:999px;padding:12px 16px;width:100%;max-width:320px;min-height:48px;box-shadow:0 4px 0 #071a3b}
 #chin:focus,.ovl input:focus{outline:0;border-color:var(--as-gold-500)}
 .rkh{color:#ffd35c!important;-webkit-text-stroke:0;text-shadow:0 3px 0 #0b2450,0 0 4px #0b2450,0 0 22px #0b2450!important}
 .ovl .tiles>div{background:linear-gradient(180deg,#fff,var(--as-blue-100))!important;color:var(--as-ink);border:2px solid var(--as-border);box-shadow:var(--as-shadow-card)}
 .ovl .tiles small{color:var(--as-muted)}
 .ovl .gt2{background:#ffffff1f;border:1px solid #ffffff44;border-radius:999px;padding:6px 18px}
-.ovl.cert .chd{background:linear-gradient(180deg,#ffe08a,var(--as-gold-500));color:#4a3000!important;border-color:#fff3c4;text-shadow:none;box-shadow:0 4px 0 #a87400}
 /* --- จอเตี้ย/แคบ: ให้เมนูหน้าหลักพอดีจอ --- */
 @media (max-height:620px){.home .hero{flex-basis:clamp(180px,33dvh,260px)!important}.gcards{padding:8px 6px!important;row-gap:8px}.pg3{padding:6px 12px}}
 @media (max-width:360px){.chd{font-size:19px!important;padding:6px 16px;text-align:center}.achs2{flex-wrap:wrap}.achs2 small{flex-basis:100%}.cpill{font-size:13px;padding:5px 10px}.aq em{min-width:40px;padding:4px 8px}}
@@ -758,23 +747,21 @@ button,.opt,.gc,.btn,.ghost,.gb{touch-action:manipulation;-webkit-user-select:no
 <main class="card sc-cover" id="card">
  <section class="cover"><div class="cstripe"></div>
   <div class="ctitle"><small>ALL SELECT · SPECIALTY MOMENT</small><h1>Service<br>Simulator</h1><p>เกมฝึกบริการสไตล์เรื่องเล่า</p></div>
-  <div class="cstage"><img id="c1" alt=""><img id="c2" alt=""></div><i class="pt" style="left:8%;animation-duration:9s;animation-delay:-1s"></i><i class="pt" style="left:20%;animation-duration:12s;animation-delay:-5s"></i><i class="pt" style="left:33%;animation-duration:10s;animation-delay:-8s"></i><i class="pt" style="left:46%;animation-duration:13s;animation-delay:-2s"></i><i class="pt" style="left:58%;animation-duration:9s;animation-delay:-6s"></i><i class="pt" style="left:70%;animation-duration:11s;animation-delay:-3s"></i><i class="pt" style="left:82%;animation-duration:12s;animation-delay:-9s"></i><i class="pt" style="left:92%;animation-duration:10s;animation-delay:-4s"></i><i class="pt" style="left:14%;animation-duration:14s;animation-delay:-11s"></i><i class="pt" style="left:64%;animation-duration:15s;animation-delay:-7s"></i><div class="cchips"><span>❓ 36 คำถามจริง</span><span>⚡ เล่นสั้น 5 ข้อ</span><span>🏅 ใบประกาศนียบัตร</span></div>
+  <div class="cstage"><img id="c1" alt=""><img id="c2" alt=""></div><i class="pt" style="left:8%;animation-duration:9s;animation-delay:-1s"></i><i class="pt" style="left:20%;animation-duration:12s;animation-delay:-5s"></i><i class="pt" style="left:33%;animation-duration:10s;animation-delay:-8s"></i><i class="pt" style="left:46%;animation-duration:13s;animation-delay:-2s"></i><i class="pt" style="left:58%;animation-duration:9s;animation-delay:-6s"></i><i class="pt" style="left:70%;animation-duration:11s;animation-delay:-3s"></i><i class="pt" style="left:82%;animation-duration:12s;animation-delay:-9s"></i><i class="pt" style="left:92%;animation-duration:10s;animation-delay:-4s"></i><i class="pt" style="left:14%;animation-duration:14s;animation-delay:-11s"></i><i class="pt" style="left:64%;animation-duration:15s;animation-delay:-7s"></i><div class="cchips"><span>❓ 36 คำถามจริง</span><span>⚡ เล่นสั้น 5 ข้อ</span></div>
   <button class="btn big pulse" id="cs">▶ แตะเพื่อเริ่ม</button><small class="cf">ฝึกบริการ All Select ที่ร้านสะดวกซื้อ</small></section>
- <section class="namep"><div class="av"><img id="nav" alt=""></div><h2 id="nh">ตั้งชื่อของคุณ</h2><p>เลือกเพศและตั้งชื่อ ชื่อนี้จะขึ้นในป้ายชื่อ บทสนทนา และเกียรติบัตร</p><div class="gsel"><button class="gb on" data-g="f" type="button"><img alt="" id="gbf">👩 ผู้หญิง</button><button class="gb" data-g="m" type="button"><img alt="" id="gbm">👨 ผู้ชาย</button></div>
+ <section class="namep"><div class="av"><img id="nav" alt=""></div><h2 id="nh">ตั้งชื่อของคุณ</h2><p>เลือกเพศและตั้งชื่อ ชื่อนี้จะขึ้นในป้ายชื่อและบทสนทนา</p><div class="gsel"><button class="gb on" data-g="f" type="button"><img alt="" id="gbf">👩 ผู้หญิง</button><button class="gb" data-g="m" type="button"><img alt="" id="gbm">👨 ผู้ชาย</button></div>
   <input id="ni" maxlength="12" placeholder="เช่น มิ้นท์" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done"><div class="nerr" id="ne"></div><small id="pnote">ข้อมูลผู้เล่นเก็บไว้ในเครื่องนี้เท่านั้น</small>
   <button class="btn big" id="nok">ยืนยัน ▶</button><button class="ghost" id="ndel" type="button" hidden>🗑 ลบข้อมูลผู้เล่นนี้</button><button class="ghost" id="nback">← กลับหน้าปก</button></section>
  <section class="home"><div class="hero"><span class="fl" style="left:8%">☕</span><span class="fl" style="left:32%;animation-delay:2s">✨</span><span class="fl" style="left:58%;animation-delay:1s">🫘</span><span class="fl" style="left:84%;animation-delay:3s">💖</span><img id="h1" alt=""><img id="h2" alt=""><div class="hsw"><button type="button" id="hm" title="เสียงเพลง">🎵</button><button type="button" id="hs" title="เอฟเฟกต์เสียง">🔊</button><button type="button" id="hts" style="font:700 15px Prompt,sans-serif">Aa</button></div></div>
  <div class="hb"><h1>Service Simulator</h1><div id="ver" aria-hidden="true"></div>
  <button class="hello" id="hello" type="button"></button>
  <div class="pg3"><div class="ptxt"><span id="ptx">ยังไม่เคยฝึก</span><span id="best"></span></div><div class="pbar"><i id="pbi"></i></div></div>
- <div id="trophy"></div>
  <div class="gcards">
   <button class="gc main" id="st" type="button"><i>💬</i><span><b>ถามตอบกับลูกค้า</b><small id="qsub">สุ่มรอบละ 10 ข้อ ไม่ซ้ำจนครบคลัง</small></span><em id="bq"></em></button>
   <button class="gc" id="stq" type="button"><i>⚡</i><span><b>เล่นสั้น 5 ข้อ</b><small id="stqs">จบเร็ว เหมาะฝึกระหว่างพัก</small></span></button>
   
   
   <button class="gc" id="sta" type="button"><i>🏅</i><span><b>ความสำเร็จ</b><small id="achs">สะสมเหรียญรางวัลจากการฝึก</small></span></button>
-  <button class="gc" id="stch" type="button"><i>🤝</i><span><b>ท้าทายเพื่อน</b><small>ใส่รหัสเดียวกัน ได้คำถามชุดเดียวกัน เทียบคะแนนกัน</small></span></button>
   <button class="gc" id="stf" type="button"><i>🏆</i><span><b>ท้าทายครบคลัง</b><small id="stfs">ตอบให้ครบทุกหัวข้อในรอบเดียว</small></span></button>
   <button class="gc" id="rv" type="button" hidden><i>🔁</i><span><b>ทบทวนข้อที่ผิด</b><small id="rvs"></small></span></button>
  </div>
@@ -978,7 +965,7 @@ async function line(who,text,m){
  if(g!=gen)return new Promise(()=>{});sp&&sp.classList.remove("speak");mouth(0,false);tx.textContent=text;dlg.onclick=null;$("nx").hidden=false;await click($("nx"));stopVoice();
 }
 
-let DEV=false,DEVRUN=null,DEVCV="rnd",DEVHINT=false,DEVFT=false,DEVAUTO=0;const VER="v92";
+let DEV=false,DEVRUN=null,DEVCV="rnd",DEVHINT=false,DEVFT=false,DEVAUTO=0;const VER="v95";
 const TSD=[24,45,70];const TSN=["ปกติ","ช้า","ช้ามาก"];let TS=0;try{TS=Math.min(2,Math.max(0,+localStorage.getItem("acs_ts")||0))}catch(e){}
 function tsSync(){const b=$("hts");if(b){b.textContent=["Aa","ช้า","ช้า+"][TS];b.title="ความเร็วตัวอักษร: "+TSN[TS];b.dataset.n=TSN[TS]}}
 function tsCycle(){TS=(TS+1)%3;try{localStorage.setItem("acs_ts",TS)}catch(e){}tsSync();toast("ความเร็วตัวอักษร: "+TSN[TS])}
@@ -1016,7 +1003,7 @@ function ending(title,story,res,stars,explain,label,fin){
  $("ehm").onclick=()=>goHome();return click($("go"));
 }
 
-// ===== หน้าสรุปผล + เกียรติบัตร =====
+// ===== หน้าสรุปผล =====
 function closeOvl(all){const l=[...document.querySelectorAll(".ovl")];(all?l:l.slice(-1)).forEach(e=>e.remove());if(!document.querySelector(".ovl"))document.body.style.overflow=""}
 function openOvl(html,cls){pushH();const d=document.createElement("div");d.className="ovl "+(cls||"");d.innerHTML=`<div class="ovi">${html}</div>`;document.body.appendChild(d);document.body.style.overflow="hidden";d.scrollTop=0;return d}
 function rankScreen(f,explain,label){wl(false);
@@ -1027,75 +1014,17 @@ function rankScreen(f,explain,label){wl(false);
  <div class="gt2">${grade(f.p)}</div>
  <div class="rst">${[0,1,2].map(i=>`<span class="${i<st?"on":""}" style="animation-delay:${.5+i*.3}s">★</span>`).join("")}</div>
  <div class="tiles"><div><b>💖 ${sat}%</b><small>ความพอใจ</small></div><div><b>🎯</b><small>${esc(f.extra||"")}</small></div>${f.bonus!=null?`<div><b>⚡ +${f.bonus}</b><small>โบนัสคอมโบ</small></div>`:""}</div>
- ${f.cert?`<button class="btn big cbtn" id="rcert" type="button">🎓 รับเกียรติบัตร</button>`:`<div class="chn">${f.certNote||""}</div>`}
+ ${f.note?`<div class="chn">${f.note}</div>`:""}
  <div class="row2"><button class="ghost" id="rgo" type="button">${label}</button><button class="ghost" id="rhm" type="button">🏠 หน้าหลัก</button></div>
  <details class="ex2"><summary>📖 ดูเฉลย</summary><div class="ex">${explain}</div></details>`,"rank");
  const gg=gen,sn=$("rsn"),rg=$("rgc");let k=0;
  const iv=setInterval(()=>{k++;sn.textContent=Math.round(f.score*k/30);rg.style.strokeDashoffset=327*(1-Math.min(1,f.p*k/30));if(k>=30||gg!=gen)clearInterval(iv)},40);
  $("rhm").onclick=()=>goHome();
- if(f.cert)$("rcert").onclick=()=>{sfx("tap");showCert({pct,game:f.game})};
  return new Promise(r=>{$("rgo").onclick=()=>{sfx("tap");closeOvl(true);r()}});
-}
-async function drawCert(d){
- const W=1240,H=1754,c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d"),cx=W/2;
- try{await Promise.race([Promise.all([document.fonts.load("700 80px Prompt"),document.fonts.load("400 40px Prompt"),document.fonts.load("700 80px Mali")]),new Promise(r=>setTimeout(r,2000))])}catch(e){}
- const F="Prompt,'Noto Sans Thai',sans-serif",M="Mali,Prompt,'Noto Sans Thai',sans-serif",NAVY="#14214a";
- const gold=(y0,y1)=>{const g=x.createLinearGradient(0,y0,0,y1);g.addColorStop(0,"#f9e7a0");g.addColorStop(.45,"#d9a521");g.addColorStop(1,"#8f5f06");return g};
- x.fillStyle=NAVY;x.fillRect(0,0,W,H);
- x.fillStyle="#f26a21";x.fillRect(0,0,W/3,16);x.fillStyle="#0a8f4d";x.fillRect(W/3,0,W/3,16);x.fillStyle="#d62828";x.fillRect(2*W/3,0,W/3+1,16);
- let g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,"#fffdf6");g.addColorStop(1,"#f6e6c3");x.fillStyle=g;x.fillRect(46,46,W-92,H-92);
- x.fillStyle="rgba(180,140,60,.08)";for(let yy=70;yy<H-60;yy+=26)for(let xx=70+((yy/26|0)%2?13:0);xx<W-60;xx+=26){x.beginPath();x.arc(xx,yy,1.6,0,7);x.fill()}
- x.strokeStyle=gold(0,H);x.lineWidth=7;x.strokeRect(66,66,W-132,H-132);x.lineWidth=2;x.strokeRect(84,84,W-168,H-168);
- [[84,84,1,1],[W-84,84,-1,1],[84,H-84,1,-1],[W-84,H-84,-1,-1]].forEach(([px,py,sx,sy])=>{x.save();x.translate(px,py);x.scale(sx,sy);x.strokeStyle=gold(0,60);x.lineWidth=4;x.beginPath();x.arc(0,0,70,0,Math.PI/2);x.stroke();x.beginPath();x.arc(0,0,48,0,Math.PI/2);x.stroke();x.fillStyle=gold(0,40);x.beginPath();x.arc(0,0,16,0,Math.PI/2);x.lineTo(0,0);x.fill();x.restore()});
- x.textAlign="center";x.textBaseline="alphabetic";
- const tx=(t,y,font,col,ls,dx,dy)=>{x.font=font;x.fillStyle=col;try{x.letterSpacing=ls||"0px"}catch(e){}x.fillText(t,cx+(dx||0),y+(dy||0));try{x.letterSpacing="0px"}catch(e){}};
- // brand plaque
- const rr=(px,py,w,h,r)=>{x.beginPath();x.moveTo(px+r,py);x.arcTo(px+w,py,px+w,py+h,r);x.arcTo(px+w,py+h,px,py+h,r);x.arcTo(px,py+h,px,py,r);x.arcTo(px,py,px+w,py,r);x.closePath()};
- rr(cx-260,150,520,112,26);x.fillStyle=NAVY;x.fill();x.strokeStyle=gold(150,262);x.lineWidth=5;x.stroke();
- tx("All SELECT",222,"700 62px "+F,"#fff","4px");tx("SPECIALTY MOMENT",250,"500 20px "+F,"#f2c94c","9px");
- // title
- tx("เกียรติบัตร",470,"700 176px "+F,"#c9962b","0px",5,7);tx("เกียรติบัตร",470,"700 176px "+F,NAVY);
- tx("CERTIFICATE OF ACHIEVEMENT",534,"600 34px "+F,"#9a6a0a","14px");
- // divider
- x.strokeStyle=gold(570,590);x.lineWidth=3;x.beginPath();x.moveTo(250,580);x.lineTo(540,580);x.moveTo(700,580);x.lineTo(990,580);x.stroke();
- [0,-32,32].forEach((o,i)=>{x.save();x.translate(cx+o,580);x.rotate(Math.PI/4);x.fillStyle=gold(-12,12);const z=i?7:13;x.fillRect(-z,-z,2*z,2*z);x.restore()});
- tx("ขอมอบเกียรติบัตรฉบับนี้ให้แก่",672,"400 46px "+F,"#5a4a2a");
- let nm=d.name,fs=150;x.font="700 "+fs+"px "+M;while(x.measureText(nm).width>900&&fs>50){fs-=6;x.font="700 "+fs+"px "+M}
- tx(nm,830,"700 "+fs+"px "+M,NAVY);
- const ug=x.createLinearGradient(200,0,W-200,0);ug.addColorStop(0,"#d9a52100");ug.addColorStop(.2,"#d9a521");ug.addColorStop(.8,"#d9a521");ug.addColorStop(1,"#d9a52100");x.strokeStyle=ug;x.lineWidth=4;x.beginPath();x.moveTo(200,876);x.lineTo(W-200,876);x.stroke();
- tx("ได้ผ่านการฝึกอบรมหลักสูตรการบริการ All Select",968,"600 48px "+F,"#2f2415");
- tx("ตามมาตรฐานบริการ SAS 01",1030,"400 38px "+F,"#5a4a2a");
- tx((d.game?d.game+" · ":"")+"คะแนน "+d.pct+"%",1100,"700 42px "+F,"#9a6a0a");
- // seal + laurel
- const sy=1380,R=132;
- for(const sd of [-1,1])for(let k=0;k<11;k++){const a=(100+k*13)*Math.PI/180,Rw=R+40,px=cx+sd*Math.cos(a)*Rw,py=sy+Math.sin(a)*Rw;x.save();x.translate(px,py);x.rotate(sd>0?a:Math.PI-a);x.fillStyle=gold(-20,20);x.beginPath();x.ellipse(0,0,9,24,0,0,7);x.fill();x.restore()}
- x.fillStyle="#b4232a";x.beginPath();x.moveTo(cx-70,sy+80);x.lineTo(cx-118,sy+230);x.lineTo(cx-70,sy+200);x.lineTo(cx-34,sy+240);x.lineTo(cx-20,sy+90);x.fill();
- x.beginPath();x.moveTo(cx+70,sy+80);x.lineTo(cx+118,sy+230);x.lineTo(cx+70,sy+200);x.lineTo(cx+34,sy+240);x.lineTo(cx+20,sy+90);x.fill();
- x.beginPath();for(let i=0;i<=64;i++){const a=i/64*Math.PI*2,r=R+(i%2?0:10);x.lineTo(cx+Math.cos(a)*r,sy+Math.sin(a)*r)}x.closePath();x.fillStyle=gold(sy-R,sy+R);x.fill();x.strokeStyle="#fff7d6";x.lineWidth=5;x.stroke();
- x.strokeStyle="#8f5f06";x.lineWidth=3;x.beginPath();x.arc(cx,sy,R-20,0,7);x.stroke();
- x.fillStyle=NAVY;x.beginPath();x.arc(cx,sy,R-30,0,7);x.fill();
- x.fillStyle=gold(sy-70,sy+50);x.strokeStyle="#fff7d6";x.lineWidth=3;x.beginPath();for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,r=i%2?26:62;x.lineTo(cx+Math.cos(a)*r,sy-8+Math.sin(a)*r)}x.closePath();x.fill();x.stroke();
- tx("EXCELLENCE",sy+82,"700 17px "+F,"#f2c94c","5px");
- // stars
- const stn=d.pct>=90?3:d.pct>=60?2:1;x.font="700 62px "+F;const sw=x.measureText("★").width+16;
- for(let i=0;i<3;i++){x.fillStyle=i<stn?"#e8a200":"#d9ccb0";x.fillText("★",cx-sw+i*sw,1218)}
- // footer
- const dt=new Date().toLocaleDateString("th-TH",{day:"numeric",month:"long",year:"numeric"});
- x.strokeStyle="#5a4a2a";x.lineWidth=2;x.beginPath();x.moveTo(170,1572);x.lineTo(450,1572);x.moveTo(790,1572);x.lineTo(1070,1572);x.stroke();
- x.textAlign="center";x.font="500 30px "+F;x.fillStyle="#2f2415";x.fillText(dt,310,1558);
- x.font="400 25px "+F;x.fillStyle="#7a6a50";x.fillText("วันที่ออกเกียรติบัตร",310,1612);x.fillText("ผู้ฝึกสอน / ผู้จัดการร้าน",930,1612);
- const dd=new Date(),ymd=""+dd.getFullYear()+String(dd.getMonth()+1).padStart(2,"0")+String(dd.getDate()).padStart(2,"0");let hh=7;for(const ch of (d.name+ymd+d.pct))hh=(hh*31+ch.charCodeAt(0))%46656;
- x.font="400 24px "+F;x.fillStyle="#9a8a6a";x.fillText("เลขที่ SAS01-"+ymd+"-"+hh.toString(36).toUpperCase().padStart(3,"0"),cx,1668);
- return c.toDataURL("image/png");
-}
-async function showCert(opt){
- const nm=PN||"ผู้เข้าร่วม";const o=openOvl(`<div class="chd">🎓 เกียรติบัตรของคุณ</div><div class="cwrap"><div class="cld">กำลังสร้างเกียรติบัตร…</div></div><small class="chn">💾 กดค้างที่เกียรติบัตร (หรือคลิกขวา) แล้วเลือก “บันทึกรูปภาพ”</small><button class="ghost" id="cbk" type="button">← กลับ</button>`,"cert");
- $("cbk").onclick=()=>{sfx("tap");o.remove();if(!document.querySelector(".ovl"))document.body.style.overflow=""};
- try{const url=await drawCert({name:nm,pct:opt.pct,game:opt.game});if(!o.isConnected)return;o.querySelector(".cwrap").innerHTML=`<img class="cimg" src="${url}" alt="เกียรติบัตร">`;sfx("win")}catch(e){o.querySelector(".cwrap").textContent="สร้างเกียรติบัตรไม่สำเร็จ"}
 }
 const grade=p=>p>=.9?"🏆 พนักงานดีเด่น":p>=.7?"👍 บริการดีมาก":p>=.5?"🙂 พอใช้ ฝึกอีกนิด":"💪 ฝึกต่อได้อีกนิด";
 /* ===== v61 ความสำเร็จ + สตรีครายวัน ===== */
-const ACH=[["first","🌱","ก้าวแรก","ตอบถูกตั้งแต่ครั้งแรกเป็นข้อแรก"],["combo5","🔥","คอมโบ x5","ตอบถูกตั้งแต่ครั้งแรกติดกัน 5 ข้อ"],["perfect","💯","เต็มร้อย","จบรอบ 10 ข้อ ถูกครั้งแรกทุกข้อ"],["round1","🎯","จบรอบแรก","เล่นครบรอบ 10 ข้อ"],["round3","🏃","ขาประจำ","เล่นครบ 3 รอบ"],["review","🔁","แก้ตัวสำเร็จ","ผ่านโหมดทบทวนข้อที่เคยผิด"],["day3","📅","มาทุกวัน","ฝึกต่อเนื่อง 3 วันติด"],["chal","🤝","นักท้าทาย","เล่นโหมดท้าทายเพื่อนจนจบ 1 ชุด"]];
+const ACH=[["first","🌱","ก้าวแรก","ตอบถูกตั้งแต่ครั้งแรกเป็นข้อแรก"],["combo5","🔥","คอมโบ x5","ตอบถูกตั้งแต่ครั้งแรกติดกัน 5 ข้อ"],["perfect","💯","เต็มร้อย","จบรอบ 10 ข้อ ถูกครั้งแรกทุกข้อ"],["round1","🎯","จบรอบแรก","เล่นครบรอบ 10 ข้อ"],["round3","🏃","ขาประจำ","เล่นครบ 3 รอบ"],["review","🔁","แก้ตัวสำเร็จ","ผ่านโหมดทบทวนข้อที่เคยผิด"],["day3","📅","มาทุกวัน","ฝึกต่อเนื่อง 3 วันติด"],["explorer","🧭","นักสำรวจ","เล่นโหมดท้าทายครบคลัง 36 ข้อจนจบ"]];
 let ACHS=new Set(),DAYS={d:"",n:0},COIN=0,QS={d:"",p:{},c:[]},HATS=new Set(),HAT="";
 const HATL=[["🎀","ริบบิ้น",15],["🧢","หมวกแก๊ป",25],["🎧","หูฟัง",35],["🎩","หมวกทรงสูง",45],["👑","มงกุฎ",60],["🌸","ดอกไม้",20]];window.__HATL=HATL.map(h=>h[0]);window.__hat=()=>HAT;
 const sv=(k,v)=>{try{localStorage.setItem(PK(k),typeof v=="string"?v:JSON.stringify(v))}catch(e){}};
@@ -1106,7 +1035,7 @@ function addCoin(n){if(!PN)return;COIN+=n;sv("acs_coin",String(COIN));achSub()}
 function qprog(k,v,mode){if(!PN)return;qinit();const q=qlist().find(x=>x.k==k);if(!q)return;QS.p[k]=mode=="max"?Math.max(QS.p[k]||0,v):(QS.p[k]||0)+v;
  if(QS.p[k]>=q.n&&!QS.c.includes(k)){QS.c.push(k);addCoin(10);try{toast("✅ ภารกิจวันนี้สำเร็จ +10 🪙")}catch(e){}}sv("acs_q",QS)}
 window.__coin=addCoin;window.__qprog=qprog;
-function loadAch(){COIN=0;try{COIN=+localStorage.getItem(PK("acs_coin"))||0}catch(e){}try{QS=JSON.parse(localStorage.getItem(PK("acs_q"))||"null")||{d:"",p:{},c:[]}}catch(e){QS={d:"",p:{},c:[]}}try{HATS=new Set(JSON.parse(localStorage.getItem(PK("acs_hats"))||"[]"))}catch(e){HATS=new Set()}HAT=(localStorage.getItem(PK("acs_hat"))||"");if(!HATS.has(HAT))HAT="";try{ACHS=new Set(JSON.parse(localStorage.getItem(PK("acs_ach"))||"[]"))}catch(e){ACHS=new Set()}try{DAYS=JSON.parse(localStorage.getItem(PK("acs_day"))||"null")||{d:"",n:0}}catch(e){DAYS={d:"",n:0}}}
+function loadAch(){COIN=0;try{COIN=+localStorage.getItem(PK("acs_coin"))||0}catch(e){}try{QS=JSON.parse(localStorage.getItem(PK("acs_q"))||"null")||{d:"",p:{},c:[]}}catch(e){QS={d:"",p:{},c:[]}}try{HATS=new Set(JSON.parse(localStorage.getItem(PK("acs_hats"))||"[]"))}catch(e){HATS=new Set()}HAT=(localStorage.getItem(PK("acs_hat"))||"");if(!HATS.has(HAT))HAT="";try{ACHS=new Set(JSON.parse(localStorage.getItem(PK("acs_ach"))||"[]"))}catch(e){ACHS=new Set()}try{/* v95: ความสำเร็จเดิม chal เปลี่ยนเป็น explorer (คงสถานะปลดล็อกเดิม) และตัด id ที่ไม่อยู่ในรายการ */const had=ACHS.size;if(ACHS.has("chal")){ACHS.delete("chal");ACHS.add("explorer")}[...ACHS].forEach(i=>{if(!ACH.some(a=>a[0]==i))ACHS.delete(i)});if(PN&&(ACHS.size!=had||localStorage.getItem(PK("acs_ach"))!=null&&localStorage.getItem(PK("acs_ach")).indexOf("chal")>=0))localStorage.setItem(PK("acs_ach"),JSON.stringify([...ACHS]))}catch(e){}try{DAYS=JSON.parse(localStorage.getItem(PK("acs_day"))||"null")||{d:"",n:0}}catch(e){DAYS={d:"",n:0}}}
 function ach(id){if(!PN||ACHS.has(id))return;const a=ACH.find(x=>x[0]==id);if(!a)return;ACHS.add(id);try{localStorage.setItem(PK("acs_ach"),JSON.stringify([...ACHS]))}catch(e){}
  try{sfx("win");toast("🏅 ปลดล็อก: "+a[2])}catch(e){}achSub()}
 const dstr=d=>d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
@@ -1116,7 +1045,7 @@ function showAch(){qinit();const o=openOvl("","achv");const box=o.querySelector(
  const draw=()=>{const ql=qlist();
   box.innerHTML=`<div class="chd">🏅 ความสำเร็จ & ร้านค้า</div><p class="achp"><span class="cpill">🪙 เหรียญ <b>${COIN}</b></span><span class="cpill">🔥 ฝึกต่อเนื่อง <b>${Math.max(1,DAYS.n||0)}</b> วัน</span></p>
   <div class="achs2">📅 ภารกิจวันนี้ <small>ผ่านแล้วรับ +10 🪙</small></div><div class="achq">${ql.map(q=>{const v=Math.min(q.n,QS.p[q.k]||0),d=QS.c.includes(q.k);return `<div class="aq ${d?"on":""}"><i class="aqi">${d?"✅":"🎯"}</i><div class="aqt"><span>${q.t}</span><div class="aqb"><u style="width:${Math.round(v/q.n*100)}%"></u></div></div><em>${d?"รับแล้ว":v+"/"+q.n}</em></div>`}).join("")}</div>
-  <div class="achs2">🛍 ร้านค้า <small>โชว์ข้างชื่อคุณบนหน้าหลักและเกียรติบัตร</small></div><div class="achh">${HATL.map(h=>{const own=HATS.has(h[0]),eq=HAT==h[0];return `<button type="button" class="ah ${eq?"eq":own?"own":""}" data-h="${h[0]}"><i>${h[0]}</i><small>${h[1]}</small><b>${eq?"✓ สวมอยู่":own?"สวมใส่":"🪙 "+h[2]}</b></button>`}).join("")}</div>
+  <div class="achs2">🛍 ร้านค้า <small>โชว์ข้างชื่อคุณบนหน้าหลัก</small></div><div class="achh">${HATL.map(h=>{const own=HATS.has(h[0]),eq=HAT==h[0];return `<button type="button" class="ah ${eq?"eq":own?"own":""}" data-h="${h[0]}"><i>${h[0]}</i><small>${h[1]}</small><b>${eq?"✓ สวมอยู่":own?"สวมใส่":"🪙 "+h[2]}</b></button>`}).join("")}</div>
   <div class="achs2">🏆 ความสำเร็จ <small>${ACHS.size}/${ACH.length}</small></div><div class="achg">${ACH.map(a=>`<div class="ac ${ACHS.has(a[0])?"on":""}"><i>${ACHS.has(a[0])?a[1]:"🔒"}</i><b>${a[2]}</b><small>${a[3]}</small></div>`).join("")}</div><button class="ghost" id="abk" type="button">← กลับ</button>`;
   box.querySelectorAll(".ah").forEach(b=>b.onclick=()=>{const h=HATL.find(x=>x[0]==b.dataset.h);
    if(HATS.has(h[0])){HAT=HAT==h[0]?"":h[0];sv("acs_hat",HAT);sfx("pick")}
@@ -1132,8 +1061,7 @@ function showBest(){updateRV();try{loadAch();touchDay();achSub();loadApp();hello
  const q=DONE.q,fq=DONE.f;$("bq").textContent=q!=null?"✓ "+q+"%":"";try{$("stqs").textContent=SH&&SH.plays?`สถิติ 5 ข้อ: ดีที่สุด ${SH.best}% · เล่นแล้ว ${SH.plays} ครั้ง`:"จบเร็ว เหมาะฝึกระหว่างพัก"}catch(e){}
  $("ptx").textContent=fq>=50?"ผ่านการฝึกครบ 36 ข้อแล้ว":q!=null||fq!=null?"ฝึกแล้ว · ยังไม่ผ่านครบ 36 ข้อ":"ยังไม่เคยฝึก";$("pbi").style.width=(fq!=null?Math.min(100,fq):0)+"%";
  $("best").textContent=BEST?"🏅 สถิติถามตอบ "+BEST+"%":"";
- $("trophy").innerHTML=fq>=50&&PN?`<button class="gc gold" id="tcert" type="button"><i>🎓</i><span><b>รับเกียรติบัตร</b><small>ผ่านครบ 36 ข้อ คะแนน ${fq}%</small></span></button>`:"";
- if($("tcert"))$("tcert").onclick=()=>{sfx("tap");showCert({pct:DONE.f,game:"ท้าทายครบคลัง 36 ข้อ"})}}
+}
 function fin(p,st){if(st==0&&p*100>BEST){BEST=Math.round(p*100);try{localStorage.setItem(PK("acs_best"),BEST)}catch(e){}}showBest()}
 function enter(){const c=$("cust");c.classList.remove("enter");void c.offsetWidth;c.classList.add("enter");c.onanimationend=()=>c.classList.remove("enter")}
 function burst(n){const e=["🎉","⭐","✨","💖","🎊","☕"];for(let i=0;i<n;i++)setTimeout(()=>{const x=document.createElement("span");x.textContent=e[Math.random()*e.length|0];x.style.left=Math.random()*92+"%";x.style.bottom=(10+Math.random()*30)+"%";x.style.fontSize=(20+Math.random()*20)+"px";$("fx").appendChild(x);setTimeout(()=>x.remove(),2400)},i*60)}
@@ -1152,7 +1080,7 @@ $("nback").onclick=()=>{sfx("tap");screen("cover")};
 /* ===== v89 ผู้เล่นหลายคน (ถอดระบบ PIN ออกแล้ว) =====
    ชื่อผู้เล่นและเพศเก็บใน acs_players; ข้อมูลของแต่ละคนแยกด้วยคีย์ BASEK_ชื่อ ใน localStorage ของเบราว์เซอร์
    ไม่มีรหัสผ่าน: ผู้ที่เข้าถึงเครื่องนี้เลือกหรือลบผู้เล่นได้ การลบมีหน้าต่างยืนยันกันกดพลาด */
-const PLK="acs_players",BASEK=["acs_wr","acs_seen","acs_done","acs_best","acs_chal","acs_ach","acs_day","acs_q","acs_hats","acs_hat","acs_coin","acs_rounds","acs_short"];
+const PLK="acs_players",BASEK=["acs_wr","acs_seen","acs_done","acs_best","acs_chal","acs_ach","acs_day","acs_q","acs_hats","acs_hat","acs_coin","acs_rounds","acs_short","acs_story"];
 let PLY={};try{PLY=JSON.parse(localStorage.getItem(PLK)||"{}")||{}}catch(e){PLY={}}
 const plSave=()=>{try{localStorage.setItem(PLK,JSON.stringify(PLY))}catch(e){}};
 /* ย้ายข้อมูลจาก v87/v88: เก็บชื่อและเพศไว้ ตัดเฉพาะฟิลด์รหัสผ่านเดิมทิ้ง (ไม่แตะคะแนน/สถิติของผู้เล่น) */
@@ -1172,7 +1100,7 @@ $("nok").onclick=()=>{const v=$("ni").value.trim();
  PN=key;try{localStorage.setItem("acs_name",PN)}catch(e){}loadProg();showBest();PG=selg;try{localStorage.setItem("acs_g",PG)}catch(e){}rebuildChars();applyGender();sfx("pick");hello();screen("menu")};
 $("ndel").onclick=()=>{const v=$("ni").value.trim(),k=plFind(v);
  if(!k)return;
- if(!confirm("ลบข้อมูลของ “"+k+"” ทั้งหมด (คะแนน เหรียญ ความสำเร็จ เกียรติบัตร) ลบแล้วกู้คืนไม่ได้ ยืนยันหรือไม่?"))return;
+ if(!confirm("ลบข้อมูลของ “"+k+"” ทั้งหมด (คะแนน เหรียญ ความสำเร็จ) ลบแล้วกู้คืนไม่ได้ ยืนยันหรือไม่?"))return;
  try{BASEK.forEach(b=>localStorage.removeItem(b+"_"+k));if(localStorage.getItem("acs_name")==k)localStorage.removeItem("acs_name")}catch(x){}
  delete PLY[k];plSave();
  if(PN==k){PN="";loadProg();showBest();hello()}if(LASTN==k)LASTN="";
@@ -1190,7 +1118,6 @@ function preview(){$("nav").src=staff("happy",selg,$("ni").value.trim().slice(0,
 function selG(g){selg=g;document.querySelectorAll(".gb").forEach(b=>b.classList.toggle("on",b.dataset.g==g));preview()}
 document.querySelectorAll(".gb").forEach(b=>b.onclick=()=>{sfx("tap");selG(b.dataset.g)});
 $("ni").addEventListener("input",preview);
-function cert(){return PN?`<div class="cert">🎓 เกียรติบัตร<br><b>${HAT?HAT+" ":""}${esc(PN)}</b><br>ผ่านการฝึกบริการ All Select · ความพอใจลูกค้า ${sat}%<br><small>${new Date().toLocaleDateString("th-TH",{day:"numeric",month:"long",year:"numeric"})}</small></div>`:""}
 
 hello();rebuildChars();applyGender();try{$("qsub").textContent=`สุ่มรอบละ 10 ข้อ จากคลัง ${SCENES.length} ข้อ ไม่ซ้ำจนครบ`;$("stfs").textContent=`ตอบให้ครบทุกหัวข้อ (${SCENES.length} ข้อ) ในรอบเดียว`}catch(e){}
 let HP=0;function pushH(){try{if(!HP){history.pushState({acs:1},"");HP=1}}catch(e){}}
@@ -1210,17 +1137,6 @@ function drawDeck(n){
  let pick=take(pool);
  if(pick.length<n){const have=new Set(pick.map(x=>x.topic));SEEN=new Set();const rest=SCENES.filter(x=>!have.has(x.topic));const more=take(rest).slice(0,n-pick.length);pick=pick.concat(more)}
  return shuf(pick)}
-let CHAL="";
-function seedDeck(code,n){let h=2166136261;for(const ch of String(code)){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)>>>0}
- const rnd=()=>{h=(h+0x6D2B79F5)>>>0;let t=h;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296};
- const a=SCENES.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
- const out=[],used=new Set();for(const sc of a){const b=baseOf(sc.topic);if(used.has(b))continue;used.add(b);out.push(sc);if(out.length>=n)break}return out}
-const chalGet=()=>{try{return JSON.parse(localStorage.getItem(PK("acs_chal"))||"{}")||{}}catch(e){return{}}};
-function chalOpen(){const code0=String(1000+Math.floor(Math.random()*9000));
- const o=openOvl(`<div class="chd">🤝 ท้าทายเพื่อน</div><p class="achp">ใส่รหัสเดียวกัน ทุกคนจะได้ <b>คำถามชุดเดียวกัน 10 ข้อ</b> แล้วเอาคะแนนมาเทียบกันได้เลย</p><input id="chin" class="cfri" maxlength="12" value="${code0}" autocomplete="off" autocapitalize="off" aria-label="รหัสท้าทาย"><p class="achp" id="chb"></p><button class="btn big" id="chgo" type="button">▶ เริ่มท้าทาย</button><button class="ghost" id="chbk" type="button">← กลับ</button>`,"achv");
- const inp=$("chin"),show=()=>{const c=String(inp.value||"").trim().toLowerCase().slice(0,12),b=chalGet()[c];$("chb").textContent=b!=null?`🏅 คะแนนดีที่สุดของคุณในรหัส “${c}” : ${b}/100`:"ยังไม่เคยเล่นรหัสนี้"};inp.oninput=show;show();
- $("chbk").onclick=()=>{sfx("tap");o.remove();if(!document.querySelector(".ovl"))document.body.style.overflow=""};
- $("chgo").onclick=()=>{const c=String(inp.value||"").trim().toLowerCase().slice(0,12);if(!c){sfx("bad");return}sfx("pick");CHAL=c;o.remove();if(!document.querySelector(".ovl"))document.body.style.overflow="";ROUND=0;play("chal",10)}}
 function updateRV(){const n=[...WR].filter(t=>SCENES.some(s=>s.topic==t)).length;$("rv").hidden=!n;$("rvs").textContent=`มี ${n} ข้อที่เคยตอบผิด · ฝึกซ้ำเฉพาะข้อนั้น`}
 const shuf=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
 const CVN=["man","woman","student","uncle","man2","man3","student2","student3","uncle2","uncle3","woman2","woman3"],CS={};let CUR="man";
@@ -1256,42 +1172,131 @@ async function storyIntro(si,N,s,G){
  const th=document.createElement("div");th.className="thk";th.textContent=topicEm(s.topic);sc.appendChild(th);setTimeout(()=>th.remove(),3600);
  return true}
 const CT=t=>/^(woman|student)/.test(CUR)?String(t).replace(/ผม/g,"ฉัน").replace(/นะครับ/g,"นะคะ").replace(/ครับ\?/g,"คะ?").replace(/ไหมครับ/g,"ไหมคะ").replace(/ครับ/g,"ค่ะ"):t;
+/* ===== v93 Task 009: เรื่องเล่าต่อเนื่อง (ชั้นข้อความ ไม่แตะคำถาม/ตัวเลือก/เฉลย/คะแนน/เหรียญ/ภารกิจ/ลำดับสุ่มข้อ) =====
+   ทุกรอบ = 1 กะทำงานของร้าน: ธีม 4 แบบ · บทเปิดกะ · บทเชื่อมฉาก (แทน OPEN) · ลูกค้าประจำ(คนเดิม) กลับมา 2 ครั้ง · ปฏิกิริยาลูกค้าแบบคลังใหญ่ · บทปิดกะ
+   ข้อความเป็นบรรยากาศ/ท่าทางเท่านั้น ห้ามมีข้อมูลสินค้า ราคา โปรโมชั่น หรือคำใบ้คำตอบ · เขียนแบบ ผม/ครับ แล้วให้ CT() แปลงเป็นคำผู้หญิง
+   ประวัติประโยคที่ใช้เก็บแยกตามผู้เล่น (acs_story_ชื่อ) ถ้าอ่าน/บันทึกไม่ได้จะใช้หน่วยความจำชั่วคราวและสุ่มต่อได้ */
+const STORY=(()=>{
+const HK="acs_story",TH=["m","r","e","w"];let MEM={h:[],t:""};
+const OPEN={
+m:["เช้าวันธรรมดา 07:30 น. เครื่องชงอุ่นเสร็จแล้ว คิวแรกของวันกำลังจะมาถึง","เช้านี้คนเดินผ่านหน้าร้านขวักไขว่ ถึงเวลาเปิดเคาน์เตอร์ All Select แล้ว","แสงแดดเช้าส่องเข้าร้าน กะเช้าเริ่มต้นขึ้นแล้ว เตรียมต้อนรับลูกค้าให้พร้อม"],
+r:["บ่ายวันนี้ฝนตกพรำ ลูกค้าแวะเข้าร้านหลบฝนเป็นระยะ กะบ่ายเริ่มแล้ว","ท้องฟ้าครึ้มและมีเสียงฟ้าร้องไกล ๆ เคาน์เตอร์ All Select พร้อมรับลูกค้าที่เข้ามาหลบฝน","ฝนเพิ่งเริ่มตกลงมา ร้านอบอุ่นขึ้นทันทีเมื่อมีลูกค้าทยอยเข้ามา"],
+e:["เย็นวันนี้คนเลิกงานเริ่มแวะเข้าร้าน กะเย็นเริ่มต้นขึ้นแล้ว","ท้องฟ้าเป็นสีส้มยามเย็น ผู้คนทยอยเดินกลับบ้านและแวะที่ร้านระหว่างทาง","ไฟหน้าร้านเริ่มสว่างขึ้น กะเย็นของวันนี้เริ่มแล้ว เตรียมต้อนรับคนเลิกงานให้พร้อม"],
+w:["เช้าวันหยุด ร้านคึกคักแบบสบาย ๆ กะสุดสัปดาห์เริ่มแล้ว","วันเสาร์-อาทิตย์ ลูกค้าเดินเข้าร้านด้วยท่าทางผ่อนคลาย เคาน์เตอร์ All Select พร้อมแล้ว","บรรยากาศวันหยุดเริ่มคึกคัก ลูกค้าทยอยมาเป็นกลุ่มเล็ก ๆ กะสุดสัปดาห์เริ่มต้นขึ้น"]};
+const AMB={
+m:[["กลิ่นกาแฟเริ่มลอยทั่วร้าน","คิวเช้าเริ่มทยอยมาทีละคน","คนเดินผ่านหน้าร้านขวักไขว่ตามเวลาไปทำงาน","เสียงประตูอัตโนมัติดังต้อนรับลูกค้าคนแล้วคนเล่า"],
+ ["คิวเช้าเริ่มยาวขึ้น","ร้านคึกคักเต็มที่ในช่วงเร่งด่วน","เสียงเครื่องชงดังสลับกับเสียงคุยของลูกค้า","ร้านคึกคักด้วยคนไปทำงานที่แวะเข้าออกไม่ขาดสาย"],
+ ["ช่วงเร่งด่วนเริ่มซาลง","แสงแดดสายส่องเข้ามาที่หน้าร้าน","คิวเริ่มโล่งขึ้นเรื่อย ๆ","เข็มนาฬิกาใกล้สิบโมง ร้านค่อย ๆ สงบลง"]],
+r:[["เสียงฝนกระทบกระจกหน้าร้าน","เสียงสะบัดร่มดังเป็นระยะหน้าร้านขณะผู้คนหลบฝน","ฝนเพิ่งเริ่มตก พื้นหน้าร้านชื้นเป็นทาง","ท้องฟ้าครึ้ม ลมเย็นพัดเข้ามาตามประตูร้าน"],
+ ["ฝนตกหนักขึ้นจนมองไม่เห็นถนนไกล ๆ","ลูกค้ายืนหลบฝนในร้านกันเต็มหน้าร้าน","เสียงฝนดังเป็นจังหวะคลอไปกับเสียงเครื่องชง","ร้านอบอุ่นท่ามกลางเสียงฝนข้างนอก"],
+ ["ฝนเริ่มซาลงเหลือเพียงละอองบาง ๆ","ท้องฟ้าเริ่มสว่างขึ้นหลังฝนหยุด","เสียงฝนเบาลงจนได้ยินเสียงเพลงในร้านชัดขึ้น","น้ำฝนไหลเป็นสายที่ขอบกระจก ลูกค้าเริ่มทยอยออกไป"]],
+e:[["แสงสีส้มยามเย็นส่องเข้ามาในร้าน","คนเลิกงานเริ่มแวะเข้ามาทีละคน","ไฟหน้าร้านเริ่มสว่างขึ้นรับยามเย็น","ผู้คนเดินผ่านหน้าร้านเร่งรีบกลับบ้าน"],
+ ["ร้านคึกคักด้วยคนเลิกงานที่แวะระหว่างทางกลับบ้าน","คิวช่วงเย็นยาวขึ้นกว่าเมื่อครู่","เสียงคุยของลูกค้าที่เพิ่งเลิกงานดังทั่วร้าน","ไฟถนนหน้าร้านเริ่มติดทีละดวง"],
+ ["ฟ้ามืดลงแล้วและร้านเริ่มซาลง","ใกล้ถึงเวลาปิดเวร ลูกค้าเริ่มบางตา","เสียงในร้านเบาลง เหลือเพียงเพลงเบา ๆ","ไฟหน้าร้านสว่างเต็มที่ยามค่ำ ลูกค้าแวะเข้ามาเป็นระยะ"]],
+w:[["บรรยากาศวันหยุดเริ่มต้นอย่างสบาย ๆ","บรรยากาศในร้านไม่รีบร้อนเหมือนวันธรรมดา","เสียงเพลงในร้านฟังสบายกว่าวันธรรมดา","ครอบครัวและเพื่อนฝูงเริ่มแวะเข้ามาทีละกลุ่ม"],
+ ["ร้านคึกคักด้วยลูกค้าวันหยุดที่เดินเที่ยวผ่านมา","คิวยาวขึ้นแบบสนุกสนานตามบรรยากาศวันหยุด","เสียงหัวเราะของกลุ่มเพื่อนดังมาจากหน้าร้าน","ลูกค้าหลายกลุ่มยืนรอคิวพลางคุยกันเพลิน ๆ"],
+ ["ช่วงบ่ายวันหยุดเริ่มผ่อนคลายลง","ลูกค้าเริ่มทยอยออกจากร้านพร้อมรอยยิ้ม","คิวโล่งขึ้น เหลือเสียงเพลงเบา ๆ ในร้าน","เสียงในร้านสงบลงหลังช่วงคึกคักของวันหยุด"]]};
+const CB={hot:["ข่าวดีแพร่ไปในคิว ลูกค้าที่รออยู่มองมาที่เคาน์เตอร์อย่างไว้ใจ","ลูกค้าที่ยืนรอกระซิบกันเบา ๆ ว่าบรรยากาศที่เคาน์เตอร์ดูอบอุ่น","คิวที่รออยู่ดูผ่อนคลายขึ้น หลายคนยิ้มให้พนักงาน","เสียงชื่นชมเบา ๆ ดังมาจากแถวคิว ทุกอย่างดูราบรื่นไปหมด"],
+ low:["แถวคิวเริ่มกระสับกระส่าย พนักงานต้องตั้งสติให้ดี","ลูกค้าที่รออยู่เริ่มชะเง้อมองเคาน์เตอร์ ถึงเวลาตั้งสติแล้ว","บรรยากาศหน้าเคาน์เตอร์ตึงขึ้นเล็กน้อย พนักงานตั้งหลักให้บริการต่อ","เสียงกระซิบในแถวคิวดังขึ้นเล็กน้อย พนักงานหายใจลึก ๆ แล้วตั้งหลัก"]};
+/* ลูกค้าเข้าร้าน: [ฉากปกติ, ฉากที่เริ่มด้วยวงเล็บสถานการณ์ (ห้ามพูดถึงการเดินมา/สิ่งที่สั่ง/เลือก/ตัดสินใจ)] */
+const ENT={
+man:[["ลูกค้าเดินตรงมาที่เคาน์เตอร์ All Select","ลูกค้าในชุดสบาย ๆ เดินมาหยุดหน้าเคาน์เตอร์","ลูกค้าเดินเข้ามาพลางยิ้มให้พนักงาน","ลูกค้าเดินมาที่เคาน์เตอร์ ท่าทางอยากคุยกับพนักงาน","ลูกค้าเดินเข้ามาทักทายพนักงาน"],
+ ["ลูกค้าอยู่ที่เคาน์เตอร์ตรงหน้าพนักงานแล้ว","ลูกค้ายืนอยู่หน้าเคาน์เตอร์ พร้อมรับบริการ","ลูกค้าอยู่ตรงหน้าพนักงานที่เคาน์เตอร์ All Select","ลูกค้าอยู่ที่หน้าเคาน์เตอร์ มองมาทางพนักงาน"]],
+woman:[["ลูกค้าเดินมาที่เคาน์เตอร์พร้อมกระเป๋าใบเล็ก","ลูกค้าเดินเข้ามาอย่างสบาย ๆ","ลูกค้ายิ้มให้พนักงานแล้วเดินมาที่เคาน์เตอร์","ลูกค้าเดินมาที่เคาน์เตอร์ ท่าทางอยากคุยกับพนักงาน","ลูกค้าเดินเข้ามาทักทายพนักงาน"],
+ ["ลูกค้าอยู่ที่เคาน์เตอร์ตรงหน้าพนักงานแล้ว","ลูกค้ายืนอยู่หน้าเคาน์เตอร์ พร้อมรับบริการ","ลูกค้าอยู่ตรงหน้าพนักงานที่เคาน์เตอร์ All Select","ลูกค้าอยู่ที่หน้าเคาน์เตอร์ มองมาทางพนักงาน"]],
+student:[["น้องนักเรียนในชุดนักเรียนเดินมาที่เคาน์เตอร์","น้องนักเรียนเดินเข้าร้านมาอย่างระมัดระวัง","น้องนักเรียนยิ้มให้พนักงานแล้วเดินมาที่เคาน์เตอร์","น้องนักเรียนเดินมาหยุดหน้าเคาน์เตอร์ ท่าทางอยากรู้อยากเห็น","น้องนักเรียนเดินเข้ามาทักทายพนักงาน"],
+ ["น้องนักเรียนอยู่ที่เคาน์เตอร์ตรงหน้าพนักงานแล้ว","น้องนักเรียนยืนอยู่หน้าเคาน์เตอร์ พร้อมรับบริการ","น้องนักเรียนอยู่ตรงหน้าพนักงานที่เคาน์เตอร์ All Select","น้องนักเรียนอยู่ที่หน้าเคาน์เตอร์ มองมาทางพนักงาน"]],
+uncle:[["คุณลุงเดินช้า ๆ มาที่เคาน์เตอร์ All Select","คุณลุงเดินเข้ามาพร้อมรอยยิ้มใจดี","คุณลุงเดินมาหยุดหน้าเคาน์เตอร์ ท่าทางอยากคุยกับพนักงาน","คุณลุงยิ้มให้พนักงานแล้วเดินเข้ามา","คุณลุงเดินเข้ามาทักทายพนักงาน"],
+ ["คุณลุงอยู่ที่เคาน์เตอร์ตรงหน้าพนักงานแล้ว","คุณลุงยืนอยู่หน้าเคาน์เตอร์ พร้อมรับบริการ","คุณลุงอยู่ตรงหน้าพนักงานที่เคาน์เตอร์ All Select","คุณลุงอยู่ที่หน้าเคาน์เตอร์ มองมาทางพนักงาน"]]};
+/* ลูกค้าประจำ (คนเดิม): ครั้งที่ 2 และ 3 ของกะ */
+const RET=[[["ลูกค้าคนเดิมจากต้นกะกลับมาที่เคาน์เตอร์อีกครั้ง ดูเหมือนยังมีเรื่องอยากคุย","ลูกค้าประจำของกะนี้เดินกลับมาอีกรอบ พลางยิ้มให้พนักงาน","ลูกค้าคนเดิมเมื่อกี้แวะกลับมาอีกครั้ง","คนเดิมที่เพิ่งออกไปเมื่อครู่เดินกลับมาที่เคาน์เตอร์"],
+ ["ลูกค้าประจำของกะนี้อยู่ที่เคาน์เตอร์ตรงหน้าพนักงานอีกครั้ง","ลูกค้าคนเดิมจากตอนต้นกะยืนอยู่ที่เคาน์เตอร์อีกครั้ง","ลูกค้าประจำของกะนี้ปรากฏตัวที่หน้าเคาน์เตอร์อีกครั้ง"]],
+ [["ลูกค้าประจำของกะนี้กลับมาเป็นครั้งที่สามแล้ว ดูคุ้นเคยกับร้านมากขึ้น","คนเดิมที่คุ้นหน้ากันดีเดินมาที่เคาน์เตอร์อีกครั้ง","ลูกค้าประจำแวะมาอีกรอบ พร้อมรอยยิ้มเหมือนเดิม","ลูกค้าคนเดิมโผล่มาอีกครั้ง คราวนี้ดูสบาย ๆ กว่าเดิม"],
+ ["ลูกค้าประจำของกะนี้อยู่ที่เคาน์เตอร์เป็นครั้งที่สามแล้ว","ลูกค้าคนเดิมที่คุ้นหน้ากันดีอยู่ที่หน้าเคาน์เตอร์อีกครั้ง","ลูกค้าประจำของกะนี้ยืนอยู่ที่เคาน์เตอร์อีกครั้ง"]]];
+/* ปฏิกิริยาลูกค้า (เขียนแบบ ผม/ครับ): q = ตอบคำถามลูกค้า, s = ขั้นตอนบริการ (ฉากวงเล็บ) */
+const GOOD={q:["ฟังแล้วสบายใจขึ้นเยอะเลยครับ 😊","ตอบชัดเจนดีครับ ขอบคุณมากครับ 👍","โอเคครับ เข้าใจแล้ว ขอบคุณที่อธิบายนะครับ 😊","ได้ความรู้เพิ่มเลยครับ ขอบคุณครับ 😄","ฟังแล้วมั่นใจขึ้นเลยครับ 👍","อธิบายเข้าใจง่ายดีครับ ผมชอบเลย 😊","ได้ตามที่อยากรู้เลยครับ ขอบคุณครับ 😄","พนักงานที่นี่ใส่ใจดีจังเลยครับ 😊","เข้าใจแล้วครับ ขอบคุณที่ไม่รีบร้อนนะครับ 😊","ชัดเจนเลยครับ เดี๋ยวผมตัดสินใจได้แล้ว 👍","ขอบคุณนะครับ ที่ช่วยอธิบายอย่างเป็นกันเอง 😊","ดีจังเลยครับ ฟังแล้วเห็นภาพขึ้นเยอะ 😆"],
+ s:["บริการดีมากเลยครับ ขอบคุณครับ 😊","สบายใจครับ พนักงานทำได้เรียบร้อยดีเลย 👍","ประทับใจครับ ขอบคุณนะครับ 😄","ได้รับการดูแลดีมากเลยครับ 😊","ราบรื่นดีจังเลยครับ ขอบคุณครับ 😆","แบบนี้สิครับ บริการแล้วสบายใจ 😊","ขอบคุณที่ใส่ใจนะครับ รู้สึกดีเลย 👍","พนักงานพูดจาสุภาพดีครับ ประทับใจเลย 😊","เป็นกันเองและเรียบร้อยดีครับ ขอบคุณครับ 😄","ทุกอย่างราบรื่นเลยครับ ขอบคุณครับ 😊"],
+ uncle:["ฟังง่ายดีครับ ไม่รีบไม่ร้อน ลุงชอบ 😊","เด็กสมัยนี้บริการดีนะครับ ขอบคุณมากครับ 😄","ลุงสบายใจแล้วครับ ขอบคุณนะครับ 👍"],
+ student:["ขอบคุณที่ดูแลนะครับ ผมรู้สึกดีเลย 😊","พี่ใจดีจังเลยครับ ขอบคุณครับ 😄","ผมประทับใจจริง ๆ ครับ 😆"]};
+const BAD={q:["อืม... ผมยังไม่ค่อยเข้าใจเลยครับ 😕","ฟังแล้วยังไม่ค่อยมั่นใจเลยครับ 😟","ขอฟังอีกแบบได้ไหมครับ ผมยังสับสนอยู่ 😕","หืม... ยังไม่ใช่สิ่งที่ผมอยากได้ยินเลยครับ 😤","ผมยังไม่แน่ใจเลยครับ ช่วยอธิบายให้ชัดกว่านี้ได้ไหมครับ 😕","แบบนี้ผมยังตัดสินใจไม่ได้เลยครับ 😟","ยังไม่ค่อยเคลียร์เลยครับ 😤","เอ... ผมว่ามันยังไม่ตรงประเด็นนะครับ 😕","ผมยังลังเลอยู่เลยครับ ขอคำตอบที่ชัดกว่านี้หน่อย 😟","อืม ผมยังไม่ค่อยสบายใจกับคำตอบนี้เลยครับ 😤"],
+ s:["อืม... ผมรู้สึกว่ามันยังไม่ค่อยเรียบร้อยเลยครับ 😕","แบบนี้ผมยังไม่ค่อยสบายใจเท่าไหร่ครับ 😟","เอ... ผมว่าน่าจะมีวิธีที่ดีกว่านี้นะครับ 😕","ผมรู้สึกไม่ค่อยได้รับการดูแลเลยครับ 😤","หืม... ยังไม่ค่อยประทับใจเลยครับ 😟","ขอบริการที่ดีกว่านี้ได้ไหมครับ 😕","ผมรู้สึกเหมือนยังขาดอะไรไปนิดหน่อยครับ 😟","ยังไม่ค่อยราบรื่นเลยครับ 😤"],
+ uncle:["ลุงยังงง ๆ อยู่เลยครับ ช่วยบอกอีกทีนะครับ 😕","แบบนี้ลุงยังไม่ค่อยเข้าใจครับ 😟","ลุงขอฟังใหม่อีกทีได้ไหมครับ 😕"],
+ student:["ขอถามอีกทีได้ไหมครับ ผมยังไม่แน่ใจ 😕","ผมยังงง ๆ อยู่เลยครับ ขอฟังอีกทีได้ไหมครับ 😕","ผมยังไม่ค่อยเข้าใจครับ 😟"]};
+const EPI={
+m:[["สิบโมงเช้า ช่วงเร่งด่วนผ่านไปด้วยดี ลูกค้าหลายคนยิ้มให้ก่อนเดินออกจากร้าน กะเช้าวันนี้จบลงแล้ว","คิวสุดท้ายของกะเช้าเดินออกไปพร้อมแก้วในมือและรอยยิ้ม พนักงานได้พักหายใจเสียที"],
+ ["ช่วงเร่งด่วนผ่านไปได้ แม้บางจังหวะลูกค้าจะลังเลอยู่บ้าง กะเช้าวันนี้จบลงแล้ว","คิวสุดท้ายของกะเช้าเดินออกไป ร้านผ่านช่วงเร่งด่วนมาได้ และยังมีให้เรียนรู้ต่อ"],
+ ["ช่วงเร่งด่วนวันนี้หนักเอาการ ลูกค้าหลายคนออกจากร้านด้วยท่าทางลังเล พรุ่งนี้ลองใหม่ให้ดีกว่านี้","กะเช้าจบลงพร้อมคิวที่ผ่านไปอย่างทุลักทุเล ไม่เป็นไร ทบทวนแล้วสู้ใหม่ได้เสมอ"]],
+r:[["ฝนซาแล้ว ลูกค้าเดินออกจากร้านด้วยรอยยิ้ม กะบ่ายวันนี้จบลงอย่างอบอุ่น","ท้องฟ้าสว่างขึ้นหลังฝนหยุด ลูกค้าหลายคนโบกมือลาพนักงานก่อนออกไป"],
+ ["ฝนหยุดแล้ว กะบ่ายวันนี้ผ่านไปได้ แม้มีบางจังหวะที่ลูกค้ายังลังเล","ลูกค้าคนสุดท้ายกางร่มเดินออกไป กะบ่ายจบลงแบบเรียบ ๆ ยังมีอะไรให้ปรับอีกนิด"],
+ ["ฝนซาลงพร้อมกับกะบ่ายที่ผ่านไปอย่างไม่ราบรื่นนัก ลองทบทวนแล้วเริ่มกะใหม่ให้ดีกว่านี้","ลูกค้าบางคนออกจากร้านพร้อมสีหน้าลังเล ถึงเวลาทบทวนแล้วลองใหม่"]],
+e:[["ไฟหน้าร้านสว่างเต็มที่ ลูกค้าคนสุดท้ายเดินออกไปอย่างอารมณ์ดี กะเย็นวันนี้จบลงอย่างสวยงาม","คนเลิกงานแวะเติมพลังแล้วเดินกลับบ้านพร้อมรอยยิ้ม กะเย็นวันนี้ผ่านไปด้วยดี"],
+ ["กะเย็นผ่านไปด้วยดีพอสมควร ลูกค้าบางคนยังลังเลอยู่บ้าง ไว้พัฒนาต่อในกะหน้า","ลูกค้าคนสุดท้ายเดินออกไปแล้ว ร้านค่อย ๆ เงียบลง กะเย็นวันนี้จบลง"],
+ ["กะเย็นวันนี้ผ่านไปอย่างเหนื่อยหน่อย ลูกค้าหลายคนยังไม่ค่อยมั่นใจ พรุ่งนี้ลองใหม่อีกครั้ง","ร้านเงียบลงพร้อมความรู้สึกว่ายังทำได้ดีกว่านี้ ทบทวนแล้วกลับมาสู้ใหม่"]],
+w:[["บ่ายวันหยุดผ่านไปอย่างอบอุ่น ลูกค้าหลายกลุ่มโบกมือลาด้วยรอยยิ้ม กะสุดสัปดาห์จบลงอย่างสวยงาม","ลูกค้าคนสุดท้ายของวันหยุดเดินออกไปพร้อมรอยยิ้ม พนักงานภูมิใจกับกะนี้"],
+ ["กะสุดสัปดาห์ผ่านไปได้ แม้มีบางจังหวะที่ลูกค้ายังลังเล ไว้ทำให้ดีขึ้นในกะหน้า","ลูกค้าคนสุดท้ายเดินจากไป ร้านกลับมาเงียบสบาย กะสุดสัปดาห์จบลง"],
+ ["กะสุดสัปดาห์นี้ไม่ราบรื่นนัก ลูกค้าบางคนยังไม่มั่นใจ ทบทวนแล้วเริ่มใหม่ให้ดีขึ้น","วันหยุดนี้ยังมีจังหวะให้พัฒนา ลองทบทวนแล้วเล่นใหม่"]]};
+const R=n=>Math.random()*n|0;
+function load(){try{const o=JSON.parse(localStorage.getItem(PK(HK))||"null");MEM=o&&Array.isArray(o.h)?{h:o.h.filter(x=>typeof x=="string").slice(-70),t:typeof o.t=="string"?o.t:""}:{h:[],t:""}}catch(e){MEM={h:[],t:""}}}
+function save(){try{localStorage.setItem(PK(HK),JSON.stringify(MEM))}catch(e){}}
+/* เลือกประโยค: ไม่ซ้ำในรอบเดียวกัน และเลี่ยงประโยคที่เพิ่งใช้ (ประวัติรายผู้เล่น) ถ้าหมดตัวเลือกใช้ตัวที่ใช้นานที่สุด */
+function pick(S,id,pool){const all=pool.map((_,i)=>i),c=all.filter(i=>!S.used.has(pool[i])),b=c.length?c:all,f=b.filter(i=>MEM.h.indexOf(pool[i])<0);
+ const i=f.length?f[R(f.length)]:b.reduce((a,x)=>MEM.h.indexOf(pool[x])<MEM.h.indexOf(pool[a])?x:a);
+ const k=pool[i];S.used.add(k);const p=MEM.h.indexOf(k);if(p>=0)MEM.h.splice(p,1);MEM.h.push(k);if(MEM.h.length>70)MEM.h.shift();return k}
+const tyOf=v=>String(v).replace(/\d+$/,"");
+const isPar=s=>String(s.q)[0]=="(";
+return{
+ begin(mode,N){try{load();const SHIFT=mode=="all"&&N==10;let t;do{t=TH[R(4)]}while(t==MEM.t);MEM.t=t;
+  const S={t,N,used:new Set(),R:null,cb:-9,op:SHIFT,ret:[]};
+  if(SHIFT)S.ret=[3+R(2),7+R(2)].filter(x=>x<N);save();return S}catch(e){return null}},
+ isRet(S,si){return !!S&&S.R!=null&&S.ret.indexOf(si)>=0},
+ setR(S,si,v){if(S&&si==0)S.R=v},
+ intro(S,si,s,v,streak,sat){try{const par=isPar(s),st=si/S.N<.34?0:si/S.N<.7?1:2,out=[];
+  if(si==0&&S.op)out.push(pick(S,"o"+S.t,OPEN[S.t]));
+  let amb;if(streak>=3&&si-S.cb>=3&&Math.random()<.6){amb=pick(S,"ch",CB.hot);S.cb=si}
+  else if(sat<50&&si-S.cb>=3&&Math.random()<.6){amb=pick(S,"cl",CB.low);S.cb=si}
+  else amb=pick(S,"a"+S.t+st,AMB[S.t][st]);
+  const ri=S.ret.indexOf(si),ent=ri>=0&&S.R!=null?pick(S,"r"+ri+(par?"p":"n"),RET[ri][par?1:0]):pick(S,"e"+tyOf(v)+(par?"p":"n"),ENT[tyOf(v)][par?1:0]);
+  out.push(amb+" "+ent);save();return out}catch(e){return s.intro}},
+ good(S,s,v){try{const ty=tyOf(v),k=isPar(s)?"s":"q",p=GOOD[k].concat(GOOD[ty]||[]);const r=pick(S,"g"+k+ty,p);save();return r}catch(e){return null}},
+ bad(S,s,v){try{const ty=tyOf(v),k=isPar(s)?"s":"q",p=BAD[k].concat(BAD[ty]||[]);const r=pick(S,"b"+k+ty,p);save();return r}catch(e){return null}},
+ close(S,sat){try{if(!S.op)return null;const b=sat>=80?0:sat>=50?1:2,r=pick(S,"x"+S.t+b,EPI[S.t][b]);save();return r}catch(e){return null}},
+ _d:{OPEN,AMB,CB,ENT,RET,GOOD,BAD,EPI}}
+})();
+
 async function play(mode,NQ){
  if(!SCENES.length)return;mode=mode||"all";NQ=NQ||10;
  let RUN=mode=="review"?shuf(SCENES.filter(s=>WR.has(s.topic))):[];
  if(mode=="dev"&&DEVRUN&&DEVRUN.length){RUN=DEVRUN.slice();DEVRUN=null}
- if(mode=="chal")RUN=seedDeck(CHAL,10);
  if(!RUN.length){if(mode=="review"){toast("ไม่มีข้อที่ต้องทบทวนแล้ว 🎉");goHome();return}if(mode!="short")mode="all";RUN=mode=="short"?drawShort(NQ):drawDeck(NQ)}
- if(mode=="all")ROUND++;gen++;const G=gen;card.classList.add("playing");pushH();wl(true);mood("talk");$("fx").innerHTML="";setSat(100);let score=0,f1=0,streak=0,bonus=0;const N=RUN.length;LIFE=mode!="chal"&&mode!="dev"&&mode!="short";
+ if(mode=="all")ROUND++;gen++;const G=gen;card.classList.add("playing");pushH();wl(true);mood("talk");$("fx").innerHTML="";setSat(100);let score=0,f1=0,streak=0,bonus=0;const N=RUN.length;const ST=(mode=="all"&&N==10)?STORY.begin(mode,N):null;LIFE=mode!="dev"&&mode!="short";
  for(let si=0;si<N;si++){
   const s=RUN[si],last=si==N-1;let first=true,tries=0;
   if(mode!="dev"&&mode!="short"){SEEN.add(s.topic);try{localStorage.setItem(PK("acs_seen"),JSON.stringify([...SEEN]))}catch(e){}}
-  let v;if(mode=="dev"&&DEVCV!="rnd")v=DEVCV;else{do{v=CVN[Math.random()*CVN.length|0]}while(v==CUR)}setCV(v);
+  let v;if(mode=="dev"&&DEVCV!="rnd")v=DEVCV;else if(STORY.isRet(ST,si))v=ST.R;else{do{v=CVN[Math.random()*CVN.length|0]}while(v==CUR||(ST&&ST.R&&v==ST.R))}STORY.setR(ST,si,v);setCV(v);
   $("chip").textContent=(mode=="review"?"ทบทวน · ":ROUND>1?"รอบ "+ROUND+" · ":"")+`ฉากที่ ${si+1} · ${dn(s.topic)}`;PIC=s.pic||null;mood("talk");const up=()=>{$("pill").textContent=`⭐ ${score} · ${si+1}/${N}`+(streak>1?` · 🔥x${streak}`:"")};up();$("pg").style.width=(si/N*100)+"%";
   if(!(await storyIntro(si,N,s,G)))return;
-  setPose("c","think");for(const t of s.intro)await line("n",t,"talk");
+  setPose("c","think");for(const t of (ST?STORY.intro(ST,si,s,CUR,streak,sat):s.intro))await line("n",t,"talk");
   while(true){
    const qq=first?CT(s.q):CT(s.retry);first=false;mood("talk");
    if(qq[0]!="(")setPose("c","ask");const c=await choose(s.ch,qq,qq[0]=="("?"n":"c",tries>=2||DEVHINT);tries++;{setPose("c","think");setPose("m","present");await line("m",c.t,"talk");setPose("m",null)}impact(c.ok);
    if(c.ok){if(tries==1){setSat(Math.min(100,sat+5));streak++;if(mode!="dev"&&mode!="short"){ach("first");if(streak>=5)ach("combo5");qprog("f1",1);qprog("combo",streak,"max")}if(mode!="dev"&&mode!="short"){WR.delete(s.topic);saveWR()}const fast=false,cb=Math.min(streak-1,4)*2,b=(fast?3:0)+cb;if(b){bonus+=b;toast((fast?"⚡ ตอบไว +3 ":"")+(cb?"🔥 คอมโบ x"+streak+" +"+cb:""))}}}else{streak=0;up();setSat(Math.max(0,sat-20));if(mode!="dev"&&mode!="short"){WR.add(s.topic);saveWR()}}
    await sleep(DEVFT?200:1000);
    if(c.ok){if(mode!="dev"&&mode!="short")addCoin(tries==1?2:1);score+=tries==1?10:5;if(tries==1)f1++;up();$("pg").style.width=((si+1)/N*100)+"%";
-    for(const [w,t] of s.good)await line(w,w=="c"?CT(t):t,"happy");await line("n",s.goodEnd[0],"happy");
-    const full=last&&mode=="all"&&N>=10,full36=full&&N>=SCENES.length,rvw=last&&mode=="review",sht=last&&mode=="short";if(last){sfx("win");burst(40);if(full){fin(score/(N*10),0);markDone("q",score/(N*10));if(full36)markDone("f",score/(N*10));ach("round1");addCoin(10);qprog("round",1);if(score>=N*10)ach("perfect");try{const k=PK("acs_rounds"),n=(+localStorage.getItem(k)||0)+1;localStorage.setItem(k,n);if(n>=3)ach("round3")}catch(e){}}
+    const GL=ST?STORY.good(ST,s,CUR):null;for(const [w,t] of (GL?[["c",GL]]:s.good))await line(w,w=="c"?CT(t):t,"happy");await line("n",s.goodEnd[0],"happy");if(last&&ST){const ep=STORY.close(ST,sat);if(ep)await line("n",ep,"happy")}
+    const full=last&&mode=="all"&&N>=10,full36=full&&N>=SCENES.length,rvw=last&&mode=="review",sht=last&&mode=="short";if(last){sfx("win");burst(40);if(full){fin(score/(N*10),0);markDone("q",score/(N*10));if(full36){markDone("f",score/(N*10));ach("explorer")}ach("round1");addCoin(10);qprog("round",1);if(score>=N*10)ach("perfect");try{const k=PK("acs_rounds"),n=(+localStorage.getItem(k)||0)+1;localStorage.setItem(k,n);if(n>=3)ach("round3")}catch(e){}}
      if(sht){const pc=Math.round(score/(N*10)*100);SH={best:Math.max(SH.best||0,pc),plays:(SH.plays||0)+1,last:pc};sv("acs_short",SH);showBest()}
      if(rvw&&f1>=Math.ceil(N/2))ach("review")}
     const gr=last?grade(score/(N*10))+(PN?" · "+esc(PN):""):"",extra=last?`<br><b>คะแนนรวม ${score}/${N*10}</b> · ถูกตั้งแต่ครั้งแรก ${f1}/${N} ข้อ · ความพอใจลูกค้า ${sat}%`:"";
-    await ending(s.title,s.goodEnd[0]+extra,last?gr:s.goodEnd[1],tries==1?s.goodEnd[2]:3,s.explain,last?(mode=="review"?"🔁 ทบทวนอีกครั้ง":"🔁 เล่นอีกครั้ง"):"ไปฉากต่อไป ▶",full?{p:score/(N*10),score,max:N*10,extra:`ถูกครั้งแรก ${f1}/${N} ข้อ`,bonus,game:full36?"ท้าทายครบคลัง 36 ข้อ":"ถามตอบกับลูกค้า",cert:full36&&score/(N*10)>=.5,certNote:full36?"ต้องได้ตั้งแต่ 50% ขึ้นไปจึงจะรับเกียรติบัตรได้":"เกียรติบัตรออกเมื่อเล่น “ท้าทายครบคลัง” ครบ 36 ข้อ และได้ตั้งแต่ 50%"}:sht?{p:score/(N*10),score,max:N*10,extra:`ถูกครั้งแรก ${f1}/${N} ข้อ`,game:"เล่นสั้น 5 ข้อ",title:"จบรอบเล่นสั้น",cert:false,certNote:`โหมดนี้เก็บสถิติแยก (ดีที่สุด ${SH.best}%) ไม่ออกเกียรติบัตร`}:rvw?{p:score/(N*10),score,max:N*10,extra:`ถูกครั้งแรก ${f1}/${N} ข้อ`,game:"ทบทวนข้อที่ผิด",title:"ทบทวนเสร็จแล้ว",cert:false,certNote:"ถูกครั้งแรกอย่างน้อยครึ่งหนึ่งจึงได้ความสำเร็จ “แก้ตัวสำเร็จ”"}:null);break}
-   for(const [w,t] of (c.r?[["c",c.r],s.bad[1]]:s.bad))await line(w,w=="c"?CT(t):t,"angry");
+    await ending(s.title,s.goodEnd[0]+extra,last?gr:s.goodEnd[1],tries==1?s.goodEnd[2]:3,s.explain,last?(mode=="review"?"🔁 ทบทวนอีกครั้ง":"🔁 เล่นอีกครั้ง"):"ไปฉากต่อไป ▶",full?{p:score/(N*10),score,max:N*10,extra:`ถูกครั้งแรก ${f1}/${N} ข้อ`,bonus,game:full36?"ท้าทายครบคลัง 36 ข้อ":"ถามตอบกับลูกค้า"}:sht?{p:score/(N*10),score,max:N*10,extra:`ถูกครั้งแรก ${f1}/${N} ข้อ`,game:"เล่นสั้น 5 ข้อ",title:"จบรอบเล่นสั้น",note:`โหมดนี้เก็บสถิติแยก (ดีที่สุด ${SH.best}%)`}:rvw?{p:score/(N*10),score,max:N*10,extra:`ถูกครั้งแรก ${f1}/${N} ข้อ`,game:"ทบทวนข้อที่ผิด",title:"ทบทวนเสร็จแล้ว",note:"ถูกครั้งแรกอย่างน้อยครึ่งหนึ่งจึงได้ความสำเร็จ “แก้ตัวสำเร็จ”"}:null);break}
+   const BL=(!c.r&&ST)?STORY.bad(ST,s,CUR):null;for(const [w,t] of (c.r?[["c",c.r],s.bad[1]]:(BL?[["c",BL],s.bad[1]]:s.bad)))await line(w,w=="c"?CT(t):t,"angry");
    if(sat<=0){await ending(s.title,"ลูกค้าหมดความอดทน เดินออกจากร้านไปแล้ว...","💔 ลูกค้าเดินออกจากร้าน",0,s.explain,"↩ ลองใหม่ (ความพอใจ 50%)");setSat(50)}else await ending(s.title,s.badEnd[0],s.badEnd[1],s.badEnd[2],s.explain,"↩ ลองตอบใหม่");
   }
  }
  if(mode=="dev"){goHome();return}
- if(mode=="chal"){const pc=Math.round(score/(N*10)*100),m=chalGet();if(!(m[CHAL]>=pc))m[CHAL]=pc;try{localStorage.setItem(PK("acs_chal"),JSON.stringify(m))}catch(e){}ach("chal");addCoin(5);goHome();setTimeout(()=>toast(`🤝 รหัส “${CHAL}” ได้ ${pc}/100 · ดีที่สุด ${m[CHAL]} · บอกเพื่อนมาเทียบกัน`),600);return}
  play(mode,NQ);
 }
 /* ===== คาเฟ่ออนไลน์ (เดินได้ + แชตพิมพ์คุยกับผู้เล่นอื่น) ===== */
-$("sta").onclick=()=>{sfx("tap");showAch()};$("stch").onclick=()=>{sfx("tap");chalOpen()};showBest();sync();try{const v=$("ver");document.querySelector(".hb").appendChild(v);v.textContent=VER}catch(e){}
+$("sta").onclick=()=>{sfx("tap");showAch()};showBest();sync();try{const v=$("ver");document.querySelector(".hb").appendChild(v);v.textContent=VER}catch(e){}
 
 /* ===== v82 กล้องฉากร้าน: เลื่อนไปหาคนที่พูด ===== */
 const CAMSH={wide:[880,414,740],staff:[800,414,680],man:[900,414,680],woman:[930,414,680],student:[960,414,680],uncle:[920,414,680]};
